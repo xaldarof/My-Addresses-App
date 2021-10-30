@@ -1,19 +1,7 @@
 [
     {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\navigation\\nav_graph.xml"
-    },
-    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_layout_background.xml.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\layout_background.xml"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_background.xml.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\button_background.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_map.xml.flat",
@@ -32,6 +20,10 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_location_on_24.xml"
     },
     {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_fragment_history.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\fragment_history.xml"
+    },
+    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.webp"
     },
@@ -40,28 +32,16 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_history_item_background.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\history_item_background.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\raw_map_style.json.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\raw\\map_style.json"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxhdpi_ic_launcher.webp.flat",
@@ -76,11 +56,55 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_history_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_history_24.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xxxhdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_home_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_home_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\navigation_nav_graph.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_left_rounded_background.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\left_rounded_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_background.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_history_item.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\history_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     }
 ]

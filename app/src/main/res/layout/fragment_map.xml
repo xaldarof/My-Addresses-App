@@ -12,7 +12,22 @@
         android:layout_height="match_parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
+
     <ImageView
+        android:id="@+id/historyBtn"
+        android:layout_width="80dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/left_rounded_background"
+        android:backgroundTint="@color/orange"
+        android:padding="8dp"
+        android:src="@drawable/ic_baseline_history_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/imageView"
         android:layout_width="36dp"
         android:layout_height="36dp"
         android:layout_gravity="center"
@@ -23,28 +38,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:tint="@color/red" />
 
+
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
         android:layout_marginEnd="4dp"
         android:background="@drawable/layout_background"
-        android:elevation="12dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-        <FrameLayout
-            android:id="@+id/constraintLayout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="50dp"
                 android:layout_height="2dp"
                 android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
                 android:background="@color/black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/textView"
+                app:layout_constraintEnd_toEndOf="@+id/textView"
+                app:layout_constraintStart_toStartOf="@+id/textView"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -64,8 +85,10 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/appCompatButton"
-                android:layout_width="0dp"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/button_background"
                 android:padding="12dp"
                 android:text="@string/test_tv"
@@ -77,8 +100,8 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView"
                 app:layout_constraintWidth_percent="0.75" />
 
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </FrameLayout>
 
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
