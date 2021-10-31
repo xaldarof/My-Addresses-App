@@ -10,14 +10,14 @@
         android:id="@+id/mapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
-
 
     <ImageView
         android:id="@+id/historyBtn"
         android:layout_width="80dp"
         android:layout_height="46dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/left_rounded_background"
         android:backgroundTint="@color/orange"
         android:padding="8dp"
@@ -39,7 +39,12 @@
         app:tint="@color/red" />
 
 
-    <include layout="@layout/bottom_sheet" android:id="@+id/bottom"/>
+    <include
+        android:id="@+id/bottom"
+        layout="@layout/bottom_sheet"
+        app:layout_constraintEnd_toEndOf="@+id/mapView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

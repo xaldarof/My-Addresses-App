@@ -28,6 +28,11 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
+                <TextView
+                    android:layout_width="42dp"
+                    android:layout_height="1dp"
+                    android:layout_gravity="center"
+                    android:background="@color/black" />
 
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -42,12 +47,12 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:listitem="@layout/history_item" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                 </RelativeLayout>
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addLocationButton"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
                     android:layout_margin="24dp"

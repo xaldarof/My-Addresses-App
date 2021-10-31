@@ -1,5 +1,6 @@
 package com.example.myaddressesapp.data.cloud.models.response
 
+import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.data.cloud.models.request.Address
 import com.google.gson.annotations.SerializedName
 
@@ -26,5 +27,8 @@ data class Data(
     val created_at:String,
     @SerializedName("updated_at")
     val updated_at:String,
-
-)
+){
+    fun mapToDbModel(): AddressModelDb {
+        return AddressModelDb(name,latitude = address.latitude,longitude = address.longitude)
+    }
+}

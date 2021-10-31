@@ -2012,6 +2012,7 @@ id actions
 id activity_chooser_view_content
 id add
 id addLocationBtn
+id addLocationButton
 id addressName
 id adjust_height
 id adjust_width
@@ -2603,6 +2604,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation nav_graph
 plurals mtrl_badge_content_description
@@ -2663,6 +2665,7 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string downloading
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -2728,6 +2731,7 @@ string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string not_connection
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through

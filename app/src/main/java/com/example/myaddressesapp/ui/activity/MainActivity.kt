@@ -14,6 +14,7 @@ import com.example.myaddressesapp.R
 import com.example.myaddressesapp.data.cloud.AddressService
 import com.example.myaddressesapp.data.cloud.models.request.Address
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
+import com.example.myaddressesapp.data.utils.setTransparentStatusBar
 import com.example.myaddressesapp.databinding.ActivityMainBinding
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
@@ -35,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.hide()
+        setTransparentStatusBar()
 
         requestPermission()
 

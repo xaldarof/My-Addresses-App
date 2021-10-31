@@ -8,4 +8,6 @@
     <string name="test_location">1.121020102, 10020012</string>
     <string name="test_street">Ulugbek Ko\'chasi</string>
     <string name="add">Add this location</string>
+    <string name="downloading">Загрузка…</string>
+    <string name="not_connection">Произошла ошибка…</string>
 </resources>
