@@ -1883,6 +1883,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable gradient
 drawable history_item_background
 drawable ic_baseline_history_24
 drawable ic_baseline_home_24
@@ -2019,7 +2020,6 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id appCompatButton
 id arc
 id asConfigured
 id async
@@ -2034,6 +2034,7 @@ id beginning
 id bestChoice
 id blocking
 id bottom
+id bottom_container
 id bounce
 id bounceBoth
 id bounceEnd
@@ -2065,7 +2066,6 @@ id closest
 id collapseActionView
 id confirm_button
 id constraint
-id constraintLayout
 id container
 id content
 id contentPanel
@@ -2381,7 +2381,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textTop
-id textView
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2500,6 +2499,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout bottom_sheet
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2628,6 +2628,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string add
 string api_key
 string app_name
 string appbar_scrolling_view_behavior

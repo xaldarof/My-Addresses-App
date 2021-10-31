@@ -5,7 +5,7 @@ import javax.inject.Qualifier
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)
-annotation class GoogleMapRetrofit
+annotation class CustomGeoCoder
 
 @Qualifier
 @Retention(AnnotationRetention.BINARY)

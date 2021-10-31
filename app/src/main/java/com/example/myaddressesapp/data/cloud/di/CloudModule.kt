@@ -25,8 +25,9 @@ object CloudModule {
 
     @Provides
     @Singleton
-    fun provideGeoCoderService(@GoogleMapRetrofit retrofit: Retrofit): GeoCodeService =
+    fun provideGeoCoderService(@CustomGeoCoder retrofit: Retrofit): GeoCodeService =
         retrofit.create(GeoCodeService::class.java)
+
 
     @Singleton
     @Provides
@@ -59,11 +60,11 @@ object CloudModule {
 
     @Provides
     @Singleton
-    @GoogleMapRetrofit
-    fun provideMapRetrofit(): Retrofit {
+    @CustomGeoCoder
+    fun provideGeoCoderRetrofit(): Retrofit {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(CloudConstants.MAP_BASE_URL)
+            .baseUrl(CloudConstants.GEO_CODER_BASE_URL)
             .build()
     }
 }
