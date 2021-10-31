@@ -1,5 +1,7 @@
 package com.example.myaddressesapp.data.cloud.models.response.map
 
+import com.example.myaddressesapp.data.cache.models.AddressModelDb
+
 data class Data(
     val administrative_area: Any,
     val confidence: Double,
@@ -20,4 +22,8 @@ data class Data(
     val region_code: String,
     val street: String,
     val type: String
-)
+){
+    fun mapToDbModel():AddressModelDb {
+        return AddressModelDb(label,latitude,longitude)
+    }
+}

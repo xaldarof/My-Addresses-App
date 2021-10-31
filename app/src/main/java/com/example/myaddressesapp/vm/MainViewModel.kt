@@ -1,6 +1,7 @@
 package com.example.myaddressesapp.vm
 
 import androidx.lifecycle.ViewModel
+import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.data.cloud.GeoCoderRepository
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.AddressResponseBody
@@ -25,5 +26,9 @@ class MainViewModel
 
     suspend fun fetchSingleCodeInfo(query: String): GeoCoderResponseModel {
         return repository.fetchSingleCodeInfo(query)
+    }
+
+    suspend fun addGeoCode(addressModelDb: AddressModelDb){
+        repository.addGeoCodeInfo(addressModelDb)
     }
 }

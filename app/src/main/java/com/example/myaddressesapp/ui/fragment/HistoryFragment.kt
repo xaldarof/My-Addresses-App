@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.myaddressesapp.R
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.FragmentHistoryBinding
@@ -17,7 +18,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class HistoryFragment : Fragment() {
+class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack {
 
     private lateinit var binding:FragmentHistoryBinding
     private val viewModel:HistoryViewModel by viewModels()
@@ -29,7 +30,7 @@ class HistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter = AddressRecyclerAdapter()
+        val adapter = AddressRecyclerAdapter(this)
         binding.rv.adapter = adapter
 
         lifecycleScope.launch {
@@ -37,9 +38,10 @@ class HistoryFragment : Fragment() {
                 adapter.update(it)
             }
         }
+    }
 
-        for (i in 0 until 30) {
-            viewModel.addAddress(AddressModelDb("Ulugbek Kochasi $i",1.21212,121.2121))
-        }
+    override fun onClickOpenMap(addressModelDb: AddressModelDb) {
+        findNavController().navigate(HistoryFragmentDirections
+            .actionHistoryFragmentToMapFragment(addressModelDb.mapToUiModel()))
     }
 }

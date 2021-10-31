@@ -10,10 +10,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.myaddressesapp.data.cloud.AddressService
-import com.example.myaddressesapp.data.cloud.CloudConstants
-import com.example.myaddressesapp.data.cloud.GeoCodeService
-
+import androidx.navigation.fragment.navArgs
+import com.example.myaddressesapp.data.cloud.models.request.Address
+import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
+import com.example.myaddressesapp.data.cloud.models.response.map.Data
 import com.example.myaddressesapp.data.utils.isLocationPermissionGranted
 import com.example.myaddressesapp.databinding.FragmentMapBinding
 import com.example.myaddressesapp.ui.adapter.BottomSheetRecyclerAdapter
@@ -22,25 +22,27 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.net.URL
-import javax.inject.Inject
-
 
 @AndroidEntryPoint
-class MapFragment : Fragment() , OnMapReadyCallback{
+class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,GoogleMap.OnMarkerClickListener {
 
-    private lateinit var binding:FragmentMapBinding
-    private val viewModel:MainViewModel by viewModels()
+    private lateinit var binding: FragmentMapBinding
+    private val viewModel: MainViewModel by viewModels()
+    private val args by navArgs<MapFragmentArgs>()
 
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        binding = FragmentMapBinding.inflate(inflater,container,false)
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        binding = FragmentMapBinding.inflate(inflater, container, false)
         BottomSheetBehavior.from(binding.bottom.bottomContainer).apply {
             state = BottomSheetBehavior.STATE_COLLAPSED
             peekHeight = 200
@@ -59,17 +61,17 @@ class MapFragment : Fragment() , OnMapReadyCallback{
 
     @SuppressLint("MissingPermission")
     override fun onMapReady(p0: GoogleMap) {
-        val loc = LatLng(37.422160,-122.084270)
-        p0.animateCamera(CameraUpdateFactory.newLatLngZoom(loc,15f))
-        binding.mapView.onResume()
-        p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
-
         setOnMapClick(p0)
+        p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
+        binding.mapView.onResume()
+
+        val loc = LatLng(37.422160, -122.084270)
+        p0.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 15f))
 
     }
 
-    private suspend fun setBottomSheetData(query:String){
-        val adapter = BottomSheetRecyclerAdapter()
+    private suspend fun setBottomSheetData(query: String) {
+        val adapter = BottomSheetRecyclerAdapter(this)
         binding.bottom.rv.adapter = adapter
         val geoData = viewModel.fetchGeoCodeInfo(query)
         adapter.update(geoData.data)
@@ -79,21 +81,38 @@ class MapFragment : Fragment() , OnMapReadyCallback{
         }
     }
 
-    private fun setOnMapClick(googleMap: GoogleMap){
+    private fun setOnMapClick(googleMap: GoogleMap) {
         googleMap.setOnMapClickListener {
-            val clickedLocation = LatLng(it.latitude,it.longitude)
-            createMarkerAt(googleMap,clickedLocation)
+            val clickedLocation = LatLng(it.latitude, it.longitude)
+            createMarkerAt(googleMap, clickedLocation)
 
             lifecycleScope.launch {
                 val currentLocation = "${it.latitude},${it.longitude}"
-                val response = viewModel.fetchSingleCodeInfo(query = currentLocation)
-                Log.d("res","LOC = $currentLocation $$response")
                 setBottomSheetData(currentLocation)
             }
         }
     }
 
-    private fun createMarkerAt(googleMap: GoogleMap,latLng: LatLng){
+    private  fun createMarkerAt(googleMap: GoogleMap, latLng: LatLng) {
         googleMap.addMarker(MarkerOptions().position(latLng))
+        googleMap.setOnMarkerClickListener(this)
+    }
+
+    override fun onClickAddLocation(data: Data) {
+        lifecycleScope.launch {
+            withContext(Dispatchers.IO) {
+//               val response =
+//                   viewModel.createAddress(AddressRequestBody(data.label, Address(data.name, data.latitude,
+//                    data.longitude), data.type, ""))
+                viewModel.addGeoCode(data.mapToDbModel())
+            }
+        }
+    }
+
+    override fun onMarkerClick(p0: Marker): Boolean {
+        lifecycleScope.launch {
+            setBottomSheetData("${p0.position.latitude},${p0.position.longitude}")
+        }
+        return true
     }
 }

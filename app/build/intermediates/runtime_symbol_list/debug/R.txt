@@ -1884,6 +1884,9 @@ int drawable googleg_disabled_color_18 0x7f070079
 int drawable googleg_standard_color_18 0x7f07007a
 int drawable gradient 0x7f07007b
 int drawable history_item_background 0x7f07007c
+int drawable ic_baseline_add_24 0x7f0700ae
+int drawable ic_baseline_add_location_alt_24 0x7f0700af
+int drawable ic_baseline_chevron_left_24 0x7f0700b0
 int drawable ic_baseline_history_24 0x7f07007d
 int drawable ic_baseline_home_24 0x7f07007e
 int drawable ic_baseline_location_on_24 0x7f07007f
@@ -1995,6 +1998,7 @@ int id action_bar_title 0x7f08003a
 int id action_container 0x7f08003b
 int id action_context_bar 0x7f08003c
 int id action_divider 0x7f08003d
+int id action_historyFragment_to_mapFragment 0x7f0801f0
 int id action_image 0x7f08003e
 int id action_mapFragment_to_historyFragment 0x7f08003f
 int id action_menu_divider 0x7f080040
@@ -2006,8 +2010,8 @@ int id action_text 0x7f080045
 int id actions 0x7f080046
 int id activity_chooser_view_content 0x7f080047
 int id add 0x7f080048
+int id addLocationBtn 0x7f0801ef
 int id addressName 0x7f080049
-int id addressTypeIcon 0x7f08004a
 int id adjust_height 0x7f08004b
 int id adjust_width 0x7f08004c
 int id alertTitle 0x7f08004d
@@ -2312,6 +2316,7 @@ int id search_mag_icon 0x7f080177
 int id search_plate 0x7f080178
 int id search_src_text 0x7f080179
 int id search_voice_btn 0x7f08017a
+int id seeLocationBtn 0x7f0801f1
 int id select_dialog_listview 0x7f08017b
 int id selected 0x7f08017c
 int id selection_type 0x7f08017d
@@ -2499,6 +2504,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout bottom_sheet 0x7f0b001d
+int layout bottom_sheet_item_layout 0x7f0b007e
 int layout custom_dialog 0x7f0b001e
 int layout design_bottom_navigation_item 0x7f0b001f
 int layout design_bottom_sheet_dialog 0x7f0b0020

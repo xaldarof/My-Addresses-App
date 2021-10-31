@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.data.cloud.models.response.map.Data
+import com.example.myaddressesapp.databinding.BottomSheetItemLayoutBinding
 import com.example.myaddressesapp.databinding.HistoryItemBinding
 
-class BottomSheetRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val oldList = ArrayList<Data>()
 
@@ -16,17 +17,20 @@ class BottomSheetRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
         notifyDataSetChanged()
     }
 
-    inner class VH(private val historyItemBinding: HistoryItemBinding):RecyclerView.ViewHolder(historyItemBinding.root){
+    inner class VH(private val bottomSheetItemLayoutBinding: BottomSheetItemLayoutBinding)
+        :RecyclerView.ViewHolder(bottomSheetItemLayoutBinding.root){
 
         fun onBind(data: Data){
-            historyItemBinding.addressName.text = data.name
-            historyItemBinding.locationTv.text = data.latitude.toString().plus(data.longitude.toString())
+            bottomSheetItemLayoutBinding.addressName.text = data.name
+            bottomSheetItemLayoutBinding.locationTv.text = data.latitude.toString().plus(data.longitude.toString())
+
+            bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener { callback.onClickAddLocation(data) }
 
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        return VH(HistoryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
+        return VH(BottomSheetItemLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
@@ -34,4 +38,8 @@ class BottomSheetRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>
     }
 
     override fun getItemCount(): Int = oldList.size
+
+    interface CallBack{
+        fun onClickAddLocation(data: Data)
+    }
 }

@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.HistoryItemBinding
 
-class AddressRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val oldList = ArrayList<AddressModelDb>()
 
@@ -22,6 +22,9 @@ class AddressRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             historyItemBinding.addressName.text = addressModelDb.name
             historyItemBinding.locationTv.text = addressModelDb.latitude.toString().plus(addressModelDb.longitude.toString())
 
+            historyItemBinding.seeLocationBtn.setOnClickListener {
+                callback.onClickOpenMap(addressModelDb)
+            }
         }
     }
 
@@ -34,4 +37,8 @@ class AddressRecyclerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     override fun getItemCount(): Int = oldList.size
+
+    interface CallBack {
+        fun onClickOpenMap(addressModelDb: AddressModelDb)
+    }
 }

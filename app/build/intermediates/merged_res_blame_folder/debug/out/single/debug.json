@@ -44,6 +44,14 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     },
     {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_location_alt_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_add_location_alt_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_chevron_left_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_chevron_left_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\raw_map_style.json.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\raw\\map_style.json"
     },
@@ -84,8 +92,16 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\left_rounded_background.xml"
     },
     {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_bottom_sheet_item_layout.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\bottom_sheet_item_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_button_background.xml.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\button_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\mipmap-mdpi_ic_launcher.webp.flat",

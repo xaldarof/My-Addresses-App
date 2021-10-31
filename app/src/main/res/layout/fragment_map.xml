@@ -17,7 +17,7 @@
         android:id="@+id/historyBtn"
         android:layout_width="80dp"
         android:layout_height="46dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="18dp"
         android:background="@drawable/left_rounded_background"
         android:backgroundTint="@color/orange"
         android:padding="8dp"

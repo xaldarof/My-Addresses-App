@@ -1,1 +1,1 @@
-[{"navFile":"src\\main\\res\\navigation\\nav_graph.xml","javaFiles":["com.example.myaddressesapp.ui.fragment.MapFragmentDirections"]}]
+[{"navFile":"src\\main\\res\\navigation\\nav_graph.xml","javaFiles":["com.example.myaddressesapp.ui.fragment.MapFragmentDirections","com.example.myaddressesapp.ui.fragment.MapFragmentArgs","com.example.myaddressesapp.ui.fragment.HistoryFragmentDirections"]}]
