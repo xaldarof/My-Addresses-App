@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.annotation.RequiresApi
 import androidx.core.app.ActivityCompat
-import com.example.myaddressesapp.data.utils.setTransparentStatusBar
+import com.example.myaddressesapp.utils.setTransparentStatusBar
 import com.example.myaddressesapp.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,12 +1,13 @@
-package com.example.myaddressesapp.data.utils
+package com.example.myaddressesapp.utils
 
 import android.app.Activity
 import android.view.View
 import android.view.animation.AnimationUtils
-import android.widget.Button
 import androidx.appcompat.widget.AppCompatButton
 import com.example.myaddressesapp.R
 import com.example.myaddressesapp.ui.UiConstants
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
 
 fun Activity.setTransparentStatusBar() {
@@ -27,4 +28,11 @@ fun AppCompatButton.disable() {
 fun AppCompatButton.enable() {
     this.text = UiConstants.ADD_TO_HISTORY
     this.isEnabled = true
+}
+
+fun GoogleMap.zoomPlus(level:Float){
+    animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition.target, cameraPosition.zoom+level))
+}
+fun GoogleMap.zoomMinus(level:Float){
+    animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition.target, cameraPosition.zoom-level))
 }

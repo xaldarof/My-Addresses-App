@@ -12,7 +12,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.myaddressesapp.R
 import com.example.myaddressesapp.data.cloud.models.response.map.Data
-import com.example.myaddressesapp.data.utils.*
+import com.example.myaddressesapp.utils.*
 import com.example.myaddressesapp.databinding.FragmentMapBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.BottomSheetRecyclerAdapter
@@ -35,11 +35,8 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
     private lateinit var binding: FragmentMapBinding
     private val viewModel: MainViewModel by viewModels()
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+
         binding = FragmentMapBinding.inflate(inflater, container, false)
         BottomSheetBehavior.from(binding.bottom.bottomContainer).apply {
             state = BottomSheetBehavior.STATE_COLLAPSED
@@ -55,7 +52,6 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
         binding.historyBtn.setOnClickListener {
             findNavController().navigate(MapFragmentDirections.actionMapFragmentToHistoryFragment())
         }
-
     }
 
     @SuppressLint("MissingPermission")
@@ -69,15 +65,25 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
                 navigateCamera(p0, it)
             })
 
+        binding.zoomMinus.setOnClickListener {
+            p0.zoomMinus(1f)
+        }
+
+        binding.zoomPlus.setOnClickListener {
+            p0.zoomPlus(1f)
+        }
+
         binding.bottom.addLocationButton.setOnClickListener {
             lifecycleScope.launch {
                 val currentLocation = p0.formatToPosition()
+
                 if (currentLocation.isNotEmpty()) {
                     val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
                     viewModel.addGeoCode(address.mapToUiModel())
 
                     ChangeNameDialog.Base(requireContext()).show(address.mapToUiModel(),this@MapFragment)
-                }else {
+                }
+                else {
                     Toast.makeText(requireContext(), R.string.is_empty, Toast.LENGTH_SHORT).show()
                 }
             }

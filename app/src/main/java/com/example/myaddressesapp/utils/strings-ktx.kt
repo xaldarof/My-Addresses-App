@@ -1,4 +1,4 @@
-package com.example.myaddressesapp.data.utils
+package com.example.myaddressesapp.utils
 
 import com.google.android.gms.maps.GoogleMap
 

@@ -1,4 +1,4 @@
-package com.example.myaddressesapp.data.utils
+package com.example.myaddressesapp.utils
 
 import android.app.Activity
 import android.content.pm.PackageManager

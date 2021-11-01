@@ -1897,6 +1897,7 @@ drawable ic_baseline_cleaning_services_24
 drawable ic_baseline_history_24
 drawable ic_baseline_home_24
 drawable ic_baseline_location_on_24
+drawable ic_baseline_remove_24
 drawable ic_baseline_turned_in_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
@@ -2453,6 +2454,8 @@ id wrap_content_constrained
 id x_left
 id x_right
 id zero_corner_chip
+id zoomMinus
+id zoomPlus
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
