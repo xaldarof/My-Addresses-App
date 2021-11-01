@@ -1881,6 +1881,7 @@ int drawable design_ic_visibility 0x7f070075
 int drawable design_ic_visibility_off 0x7f070076
 int drawable design_password_eye 0x7f070077
 int drawable design_snackbar_background 0x7f070078
+int drawable edit_text_background 0x7f0700b2
 int drawable googleg_disabled_color_18 0x7f070079
 int drawable googleg_standard_color_18 0x7f07007a
 int drawable gradient 0x7f07007b
@@ -2047,6 +2048,7 @@ int id bounceEnd 0x7f080068
 int id bounceStart 0x7f080069
 int id buttonPanel 0x7f08006a
 int id cache_measures 0x7f08006b
+int id cancelBtn 0x7f0801fb
 int id cancel_action 0x7f08006c
 int id cancel_button 0x7f08006d
 int id carryVelocity 0x7f08006e
@@ -2176,6 +2178,7 @@ int id item_touch_helper_previous_elevation 0x7f0800e9
 int id jumpToEnd 0x7f0800ea
 int id jumpToStart 0x7f0800eb
 int id labeled 0x7f0800ec
+int id latitudeEdiText 0x7f0801fc
 int id layout 0x7f0800ed
 int id left 0x7f0800ee
 int id leftToRight 0x7f0800ef
@@ -2188,6 +2191,7 @@ int id listMode 0x7f0800f5
 int id list_item 0x7f0800f6
 int id locationImg 0x7f0801f2
 int id locationTv 0x7f0800f7
+int id longitudeEdiText 0x7f0801fd
 int id mapFragment 0x7f0800f8
 int id mapView 0x7f0800f9
 int id masked 0x7f0800fa
@@ -2259,6 +2263,7 @@ int id navigation_header_container 0x7f08013b
 int id never 0x7f08013c
 int id neverCompleteToEnd 0x7f08013d
 int id neverCompleteToStart 0x7f08013e
+int id newNameEdiText 0x7f0801fa
 int id noScroll 0x7f08013f
 int id noState 0x7f080140
 int id none 0x7f080141
@@ -2300,6 +2305,7 @@ int id rounded 0x7f080164
 int id row_index_key 0x7f080165
 int id rv 0x7f080166
 int id satellite 0x7f080167
+int id saveBtn 0x7f0801fe
 int id save_non_transition_alpha 0x7f080168
 int id save_overlay_view 0x7f080169
 int id sawtooth 0x7f08016a
@@ -2587,6 +2593,7 @@ int layout notification_template_media 0x7f0b0068
 int layout notification_template_media_custom 0x7f0b0069
 int layout notification_template_part_chronometer 0x7f0b006a
 int layout notification_template_part_time 0x7f0b006b
+int layout save_bottom_sheet_layout 0x7f0b007f
 int layout select_dialog_item_material 0x7f0b006c
 int layout select_dialog_multichoice_material 0x7f0b006d
 int layout select_dialog_singlechoice_material 0x7f0b006e
@@ -2645,6 +2652,7 @@ int string app_name 0x7f10001d
 int string appbar_scrolling_view_behavior 0x7f10001e
 int string bottom_sheet_behavior 0x7f10001f
 int string bottomsheet_action_expand_halfway 0x7f100020
+int string cancel 0x7f10008b
 int string character_counter_content_description 0x7f100021
 int string character_counter_overflowed_content_description 0x7f100022
 int string character_counter_pattern 0x7f100023
@@ -2742,6 +2750,7 @@ int string path_password_eye 0x7f10007a
 int string path_password_eye_mask_strike_through 0x7f10007b
 int string path_password_eye_mask_visible 0x7f10007c
 int string path_password_strike_through 0x7f10007d
+int string save 0x7f10008c
 int string search_menu_title 0x7f10007e
 int string something_went_wrong 0x7f100087
 int string status_bar_notification_info_overflow 0x7f10007f
@@ -2979,6 +2988,8 @@ int style Base_Widget_MaterialComponents_Snackbar 0x7f1100e0
 int style Base_Widget_MaterialComponents_TextInputEditText 0x7f1100e1
 int style Base_Widget_MaterialComponents_TextInputLayout 0x7f1100e2
 int style Base_Widget_MaterialComponents_TextView 0x7f1100e3
+int style BottomSheetDialogStyle 0x7f1102d9
+int style BottomSheetDialogTheme 0x7f1102da
 int style CardView 0x7f1100e4
 int style CardView_Dark 0x7f1100e5
 int style CardView_Light 0x7f1100e6

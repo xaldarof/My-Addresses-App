@@ -1,12 +1,11 @@
 package com.example.myaddressesapp.vm
 
 import androidx.lifecycle.ViewModel
-import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.data.cloud.GeoCoderRepository
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.AddressResponseBody
-import com.example.myaddressesapp.data.cloud.models.response.map.Data
 import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseModel
+import com.example.myaddressesapp.ui.models.AddressUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -21,14 +20,14 @@ class MainViewModel
     }
 
     suspend fun fetchGeoCodeInfo(query: String): GeoCoderResponseModel {
-        return repository.fetchGeoCodeInfo(query)
+        return repository.fetchAddressInfo(query)
     }
 
     suspend fun fetchSingleCodeInfo(query: String): GeoCoderResponseModel {
-        return repository.fetchSingleCodeInfo(query)
+        return repository.fetchSingleAddressInfo(query)
     }
 
-    suspend fun addGeoCode(addressModelDb: AddressModelDb){
-        repository.addGeoCodeInfo(addressModelDb)
+    suspend fun addGeoCode(uiModel: AddressUiModel){
+        repository.addAddress(uiModel.mapToDbModel())
     }
 }

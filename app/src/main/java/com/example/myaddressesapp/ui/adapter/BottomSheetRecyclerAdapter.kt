@@ -28,7 +28,7 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
         fun onBind(data: Data){
 
             bottomSheetItemLayoutBinding.addressName.text = data.name
-            bottomSheetItemLayoutBinding.locationTv.text = data.latitude.toString().plus(data.longitude.toString())
+            bottomSheetItemLayoutBinding.locationTv.text = data.latitude.toString().plus(",${data.longitude}")
 
             bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener {
                 callback.onClickAddLocation(data)

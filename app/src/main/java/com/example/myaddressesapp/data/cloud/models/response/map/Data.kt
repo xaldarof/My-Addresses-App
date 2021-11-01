@@ -1,6 +1,7 @@
 package com.example.myaddressesapp.data.cloud.models.response.map
 
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
+import com.example.myaddressesapp.ui.models.AddressUiModel
 
 data class Data(
     val administrative_area: Any,
@@ -25,5 +26,9 @@ data class Data(
 ){
     fun mapToDbModel():AddressModelDb {
         return AddressModelDb(label,latitude,longitude)
+    }
+
+    fun mapToUiModel():AddressUiModel {
+        return AddressUiModel(label,latitude,longitude)
     }
 }

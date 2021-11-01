@@ -13,27 +13,29 @@ interface GeoCoderRepository {
 
     suspend fun createAddress(addressRequestBody: AddressRequestBody): AddressResponseBody
 
-    suspend fun fetchGeoCodeInfo(query:String):GeoCoderResponseModel
-    suspend fun fetchSingleCodeInfo(query: String):GeoCoderResponseModel
-    suspend fun addGeoCodeInfo(addressModelDb: AddressModelDb)
+    suspend fun fetchAddressInfo(query: String): GeoCoderResponseModel
+    suspend fun fetchSingleAddressInfo(query: String): GeoCoderResponseModel
+    suspend fun addAddress(addressModelDb: AddressModelDb)
 
-    class Base @Inject constructor(private val service: AddressService,
-                                   private val geoCodeService: GeoCodeService,
-                                   private val dao: AddressDao): GeoCoderRepository {
+    class Base @Inject constructor(
+        private val service: AddressService,
+        private val geoCodeService: GeoCodeService,
+        private val dao: AddressDao
+    ) : GeoCoderRepository {
 
         override suspend fun createAddress(addressRequestBody: AddressRequestBody): AddressResponseBody {
             return service.createAddress(addressRequestBody)
         }
 
-        override suspend fun fetchGeoCodeInfo(query: String): GeoCoderResponseModel {
-            return geoCodeService.fetchGeoCodeInfo(query = query)
+        override suspend fun fetchAddressInfo(query: String): GeoCoderResponseModel {
+            return geoCodeService.fetchAddressInfo(query = query)
         }
 
-        override suspend fun fetchSingleCodeInfo(query: String): GeoCoderResponseModel {
-            return geoCodeService.fetchSingleCodeInfo(query=query)
+        override suspend fun fetchSingleAddressInfo(query: String): GeoCoderResponseModel {
+            return geoCodeService.fetchSingleAddressInfo(query = query)
         }
 
-        override suspend fun addGeoCodeInfo(addressModelDb: AddressModelDb) {
+        override suspend fun addAddress(addressModelDb: AddressModelDb) {
             dao.addAddress(addressModelDb)
         }
     }

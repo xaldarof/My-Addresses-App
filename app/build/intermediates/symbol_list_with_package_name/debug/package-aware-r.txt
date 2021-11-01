@@ -1882,6 +1882,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable edit_text_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
@@ -2048,6 +2049,7 @@ id bounceEnd
 id bounceStart
 id buttonPanel
 id cache_measures
+id cancelBtn
 id cancel_action
 id cancel_button
 id carryVelocity
@@ -2177,6 +2179,7 @@ id item_touch_helper_previous_elevation
 id jumpToEnd
 id jumpToStart
 id labeled
+id latitudeEdiText
 id layout
 id left
 id leftToRight
@@ -2189,6 +2192,7 @@ id listMode
 id list_item
 id locationImg
 id locationTv
+id longitudeEdiText
 id mapFragment
 id mapView
 id masked
@@ -2260,6 +2264,7 @@ id navigation_header_container
 id never
 id neverCompleteToEnd
 id neverCompleteToStart
+id newNameEdiText
 id noScroll
 id noState
 id none
@@ -2301,6 +2306,7 @@ id rounded
 id row_index_key
 id rv
 id satellite
+id saveBtn
 id save_non_transition_alpha
 id save_overlay_view
 id sawtooth
@@ -2588,6 +2594,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout save_bottom_sheet_layout
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -2646,6 +2653,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -2743,6 +2751,7 @@ string path_password_eye
 string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
+string save
 string search_menu_title
 string something_went_wrong
 string status_bar_notification_info_overflow
@@ -2980,6 +2989,8 @@ style Base_Widget_MaterialComponents_Snackbar
 style Base_Widget_MaterialComponents_TextInputEditText
 style Base_Widget_MaterialComponents_TextInputLayout
 style Base_Widget_MaterialComponents_TextView
+style BottomSheetDialogStyle
+style BottomSheetDialogTheme
 style CardView
 style CardView_Dark
 style CardView_Light

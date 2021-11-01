@@ -14,4 +14,6 @@
     <string name="locations">Found locations</string>
     <string name="success_save">Successfully saved to favorites.</string>
     <string name="is_empty">Город не найден в данном локации !</string>
+    <string name="save">save</string>
+    <string name="cancel">CANCEL</string>
 </resources>

@@ -16,6 +16,8 @@ import com.example.myaddressesapp.data.utils.*
 import com.example.myaddressesapp.databinding.FragmentMapBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.BottomSheetRecyclerAdapter
+import com.example.myaddressesapp.ui.dialogs.ChangeNameDialog
+import com.example.myaddressesapp.ui.models.AddressUiModel
 import com.example.myaddressesapp.vm.MainViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -28,7 +30,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,
-    GoogleMap.OnMarkerClickListener {
+    GoogleMap.OnMarkerClickListener,ChangeNameDialog.CallBack {
 
     private lateinit var binding: FragmentMapBinding
     private val viewModel: MainViewModel by viewModels()
@@ -71,8 +73,9 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
             lifecycleScope.launch {
                 val currentLocation = p0.formatToPosition()
                 if (currentLocation.isNotEmpty()) {
-                    val test = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
-                    viewModel.addGeoCode(test)
+                    val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
+                    viewModel.addGeoCode(address.mapToUiModel())
+
                     Toast.makeText(requireContext(), R.string.success_save, Toast.LENGTH_SHORT)
                         .show()
                 } else {
@@ -111,14 +114,17 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
     }
 
     override fun onClickAddLocation(data: Data) {
-        lifecycleScope.launch {
-            viewModel.addGeoCode(data.mapToDbModel())
-            Toast.makeText(requireContext(), R.string.success_save, Toast.LENGTH_SHORT).show()
-        }
+        ChangeNameDialog.Base(requireContext()).show(data.mapToUiModel(),this@MapFragment)
     }
 
     override fun onMarkerClick(p0: Marker): Boolean {
         setBottomSheetData("${p0.position.latitude},${p0.position.longitude}")
         return true
+    }
+
+    override fun onClickSave(uiModel: AddressUiModel) {
+        lifecycleScope.launch {
+            viewModel.addGeoCode(uiModel)
+        }
     }
 }

@@ -8,13 +8,13 @@ import retrofit2.http.Query
 interface GeoCodeService {
 
     @GET("reverse")
-    suspend fun fetchGeoCodeInfo(
+    suspend fun fetchAddressInfo(
         @Query("access_key") access_key:String = CloudConstants.GEO_CODER_KEY,
         @Query("query") query:String
     ): GeoCoderResponseModel
 
     @GET("reverse")
-    suspend fun fetchSingleCodeInfo(
+    suspend fun fetchSingleAddressInfo(
         @Query("access_key") access_key:String = CloudConstants.GEO_CODER_KEY,
         @Query("query") query:String,
         @Query("limit") limit:Int = 1

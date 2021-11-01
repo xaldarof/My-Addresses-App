@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="400dp"
+    android:background="@drawable/layout_background">
+
+    <EditText
+        android:id="@+id/newNameEdiText"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="24sp"
+        android:background="@drawable/edit_text_background"
+        android:elevation="2dp"
+        android:hint="@string/test_city"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/latitudeEdiText"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="24sp"
+        android:background="@drawable/edit_text_background"
+        android:elevation="2dp"
+        android:enabled="false"
+        android:hint="@string/test_city"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newNameEdiText" />
+
+    <EditText
+        android:id="@+id/longitudeEdiText"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="24sp"
+        android:background="@drawable/edit_text_background"
+        android:elevation="2dp"
+        android:enabled="false"
+        android:hint="@string/test_city"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latitudeEdiText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/cancelBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_background"
+        android:text="@string/cancel"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/newNameEdiText"
+        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/saveBtn"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/button_background"
+        android:text="@string/save"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/newNameEdiText"
+        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
