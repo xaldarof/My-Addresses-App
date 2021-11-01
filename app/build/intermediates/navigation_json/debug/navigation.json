@@ -2,6 +2,31 @@
   {
     "name": "nav_graph",
     "navigationXmlIds": [],
-    "deepLinks": []
+    "deepLinks": [
+      {
+        "schemes": [
+          "http",
+          "https"
+        ],
+        "host": "com.example.myaddressesapp",
+        "port": -1,
+        "path": "/ui/fragment/HistoryFragment",
+        "sourceFilePosition": {
+          "mSourceFile": {
+            "mFilePath": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\navigation\\nav_graph.xml",
+            "mDescription": "nav_graph"
+          },
+          "mSourcePosition": {
+            "mStartLine": 25,
+            "mStartColumn": 8,
+            "mStartOffset": 1048,
+            "mEndLine": 27,
+            "mEndColumn": 79,
+            "mEndOffset": 1178
+          }
+        },
+        "isAutoVerify": false
+      }
+    ]
   }
 ]

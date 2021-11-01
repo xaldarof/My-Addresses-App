@@ -124,6 +124,10 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\button_background.xml"
     },
     {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_turned_in_24.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_turned_in_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_ic_baseline_add_24.xml.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\ic_baseline_add_24.xml"
     },
@@ -138,6 +142,10 @@
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\drawable_gradient.xml.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\drawable\\gradient.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\anim_shake_animation.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\anim\\shake_animation.xml"
     },
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_history_item.xml.flat",

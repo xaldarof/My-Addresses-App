@@ -8,13 +8,16 @@ import javax.inject.Inject
 
 interface AddressCacheRepository {
 
-    fun fetchAddresses(): Flow<List<AddressModelDb>>
+    fun fetchAddressesAsFlow(): Flow<List<AddressModelDb>>
+    fun fetchAddresses(): List<AddressModelDb>
+
     fun deleteAddress(name:String)
     fun addAddress(addressModelDb: AddressModelDb)
 
     class Base @Inject constructor(private val dao: AddressDao): AddressCacheRepository {
 
-        override fun fetchAddresses(): Flow<List<AddressModelDb>> = dao.fetchAddresses()
+        override fun fetchAddressesAsFlow(): Flow<List<AddressModelDb>> = dao.fetchAddressesAsFlow()
+        override fun fetchAddresses(): List<AddressModelDb> = dao.fetchAddresses()
 
         override fun deleteAddress(name: String) = dao.deleteAddress(name)
 

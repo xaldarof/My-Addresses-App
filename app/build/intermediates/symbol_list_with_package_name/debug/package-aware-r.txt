@@ -1892,6 +1892,7 @@ drawable ic_baseline_chevron_left_24
 drawable ic_baseline_history_24
 drawable ic_baseline_home_24
 drawable ic_baseline_location_on_24
+drawable ic_baseline_turned_in_24
 drawable ic_clock_black_24dp
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_background
@@ -2000,7 +2001,6 @@ id action_bar_title
 id action_container
 id action_context_bar
 id action_divider
-id action_historyFragment_to_mapFragment
 id action_image
 id action_mapFragment_to_historyFragment
 id action_menu_divider
@@ -2014,6 +2014,7 @@ id activity_chooser_view_content
 id add
 id addLocationBtn
 id addLocationButton
+id addressLocation
 id addressName
 id adjust_height
 id adjust_width
@@ -2089,6 +2090,7 @@ id date_picker_actions
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
+id deepLink
 id default_activity_button
 id deltaRelative
 id dependency_ordering
@@ -2319,7 +2321,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
-id seeLocationBtn
+id seeLocation
 id select_dialog_listview
 id selected
 id selection_type
@@ -2377,6 +2379,7 @@ id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
 id tag_window_insets_animation_callback
 id terrain
+id testBtn
 id test_checkbox_android_button_tint
 id test_checkbox_app_button_tint
 id test_radiobutton_android_button_tint
@@ -2674,7 +2677,9 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string is_empty
 string item_view_role_description
+string locations
 string material_clock_display_divider
 string material_clock_toggle_content_description
 string material_hour_selection
@@ -2741,6 +2746,7 @@ string path_password_strike_through
 string search_menu_title
 string something_went_wrong
 string status_bar_notification_info_overflow
+string success_save
 string test_city
 string test_location
 string test_street

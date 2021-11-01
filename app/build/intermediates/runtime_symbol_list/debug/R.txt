@@ -1891,6 +1891,7 @@ int drawable ic_baseline_chevron_left_24 0x7f07007f
 int drawable ic_baseline_history_24 0x7f070080
 int drawable ic_baseline_home_24 0x7f070081
 int drawable ic_baseline_location_on_24 0x7f070082
+int drawable ic_baseline_turned_in_24 0x7f0700b1
 int drawable ic_clock_black_24dp 0x7f070083
 int drawable ic_keyboard_black_24dp 0x7f070084
 int drawable ic_launcher_background 0x7f070085
@@ -1999,7 +2000,6 @@ int id action_bar_title 0x7f08003a
 int id action_container 0x7f08003b
 int id action_context_bar 0x7f08003c
 int id action_divider 0x7f08003d
-int id action_historyFragment_to_mapFragment 0x7f08003e
 int id action_image 0x7f08003f
 int id action_mapFragment_to_historyFragment 0x7f080040
 int id action_menu_divider 0x7f080041
@@ -2013,6 +2013,7 @@ int id activity_chooser_view_content 0x7f080048
 int id add 0x7f080049
 int id addLocationBtn 0x7f08004a
 int id addLocationButton 0x7f0801f1
+int id addressLocation 0x7f0801f6
 int id addressName 0x7f08004b
 int id adjust_height 0x7f08004c
 int id adjust_width 0x7f08004d
@@ -2088,6 +2089,7 @@ int id date_picker_actions 0x7f080092
 int id decelerate 0x7f080093
 int id decelerateAndComplete 0x7f080094
 int id decor_content_parent 0x7f080095
+int id deepLink 0x7f0801f8
 int id default_activity_button 0x7f080096
 int id deltaRelative 0x7f080097
 int id dependency_ordering 0x7f080098
@@ -2318,7 +2320,7 @@ int id search_mag_icon 0x7f080178
 int id search_plate 0x7f080179
 int id search_src_text 0x7f08017a
 int id search_voice_btn 0x7f08017b
-int id seeLocationBtn 0x7f08017c
+int id seeLocation 0x7f0801f7
 int id select_dialog_listview 0x7f08017d
 int id selected 0x7f08017e
 int id selection_type 0x7f08017f
@@ -2376,6 +2378,7 @@ int id tag_unhandled_key_event_manager 0x7f0801b2
 int id tag_unhandled_key_listeners 0x7f0801b3
 int id tag_window_insets_animation_callback 0x7f0801b4
 int id terrain 0x7f0801b5
+int id testBtn 0x7f0801f5
 int id test_checkbox_android_button_tint 0x7f0801b6
 int id test_checkbox_app_button_tint 0x7f0801b7
 int id test_radiobutton_android_button_tint 0x7f0801b8
@@ -2673,7 +2676,9 @@ int string fab_transformation_sheet_behavior 0x7f10003b
 int string hello_blank_fragment 0x7f10003c
 int string hide_bottom_view_on_scroll_behavior 0x7f10003d
 int string icon_content_description 0x7f10003e
+int string is_empty 0x7f10008a
 int string item_view_role_description 0x7f10003f
+int string locations 0x7f100088
 int string material_clock_display_divider 0x7f100040
 int string material_clock_toggle_content_description 0x7f100041
 int string material_hour_selection 0x7f100042
@@ -2740,6 +2745,7 @@ int string path_password_strike_through 0x7f10007d
 int string search_menu_title 0x7f10007e
 int string something_went_wrong 0x7f100087
 int string status_bar_notification_info_overflow 0x7f10007f
+int string success_save 0x7f100089
 int string test_city 0x7f100080
 int string test_location 0x7f100081
 int string test_street 0x7f100082

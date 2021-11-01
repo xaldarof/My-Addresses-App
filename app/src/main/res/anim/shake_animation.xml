@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <set xmlns:android="http://schemas.android.com/apk/res/android">
+
     <rotate
         android:duration="70"
         android:fromDegrees="-5"
@@ -8,7 +9,7 @@
         android:pivotY="50%"
         android:repeatCount="2"
         android:repeatMode="reverse"
-        android:toDegrees="5" />
+        android:toDegrees="2" />
 
     <translate
         android:duration="70"
@@ -16,6 +17,6 @@
         android:interpolator="@android:anim/linear_interpolator"
         android:repeatCount="2"
         android:repeatMode="reverse"
-        android:toXDelta="10"/>
+        android:toXDelta="10" />
 
 </set>

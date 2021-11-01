@@ -10,15 +10,9 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.example.myaddressesapp.R
-import com.example.myaddressesapp.data.cache.models.AddressModelDb
-import com.example.myaddressesapp.data.cloud.models.request.Address
-import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.map.Data
-import com.example.myaddressesapp.data.utils.bellAnimation
-import com.example.myaddressesapp.data.utils.formatToPosition
-import com.example.myaddressesapp.data.utils.isLocationPermissionGranted
+import com.example.myaddressesapp.data.utils.*
 import com.example.myaddressesapp.databinding.FragmentMapBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.BottomSheetRecyclerAdapter
@@ -30,16 +24,14 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
-class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,GoogleMap.OnMarkerClickListener {
+class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,
+    GoogleMap.OnMarkerClickListener {
 
     private lateinit var binding: FragmentMapBinding
     private val viewModel: MainViewModel by viewModels()
-    private val args by navArgs<MapFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -59,9 +51,9 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         binding.mapView.getMapAsync(this)
 
         binding.historyBtn.setOnClickListener {
-            findNavController()
-                .navigate(MapFragmentDirections.actionMapFragmentToHistoryFragment())
+            findNavController().navigate(MapFragmentDirections.actionMapFragmentToHistoryFragment())
         }
+
     }
 
     @SuppressLint("MissingPermission")
@@ -70,17 +62,29 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
         binding.mapView.onResume()
 
-        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<AddressModelDb>(UiConstants.ADDRESS_ARG)
-            ?.observe(viewLifecycleOwner,{
-                setBottomSheetData("${it.latitude},${it.longitude}")
-                navigateCamera(p0,LatLng(it.latitude,it.longitude))
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<LatLng>(UiConstants.ADDRESS_ARG)
+            ?.observe(viewLifecycleOwner, {
+                navigateCamera(p0, it)
             })
+
+        binding.bottom.addLocationButton.setOnClickListener {
+            lifecycleScope.launch {
+                val currentLocation = p0.formatToPosition()
+                if (currentLocation.isNotEmpty()) {
+                    val test = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
+                    viewModel.addGeoCode(test)
+                    Toast.makeText(requireContext(), R.string.success_save, Toast.LENGTH_SHORT)
+                        .show()
+                } else {
+                    Toast.makeText(requireContext(), R.string.is_empty, Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 
-    private fun  navigateCamera(googleMap: GoogleMap,latLng: LatLng){
+    private fun navigateCamera(googleMap: GoogleMap, latLng: LatLng) {
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, UiConstants.ZOOM_STREET))
     }
-
 
     private fun setBottomSheetData(query: String) {
         val adapter = BottomSheetRecyclerAdapter(this)
@@ -88,39 +92,28 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
 
         lifecycleScope.launch {
             try {
-            viewModel.fetchGeoCodeInfo(query).apply {
-                adapter.update(data)
-                binding.bottom.addLocationButton.text = UiConstants.ADD_TO_HISTORY
-                binding.locationImg.bellAnimation()
-            }
-        }catch (e:Exception){
+                viewModel.fetchGeoCodeInfo(query).apply {
+                    adapter.update(data)
+                    binding.bottom.addLocationButton.enable()
+                }
+            } catch (e: Exception) {
                 Toast.makeText(requireContext(), R.string.not_connection, Toast.LENGTH_SHORT).show()
-                binding.bottom.addLocationButton.text = UiConstants.ADD_TO_HISTORY
+                binding.bottom.addLocationButton.enable()
             }
         }
     }
 
     private fun setOnCameraChangeListener(googleMap: GoogleMap) {
         googleMap.setOnCameraMoveListener {
-            binding.bottom.addLocationButton.text = UiConstants.DOWNLOADING
+            binding.bottom.addLocationButton.disable()
             setBottomSheetData(googleMap.formatToPosition())
         }
     }
 
     override fun onClickAddLocation(data: Data) {
         lifecycleScope.launch {
-            withContext(Dispatchers.IO) {
-                try {
-                    val response = viewModel.createAddress(AddressRequestBody(data.label, Address(data.name, data.latitude,
-                    data.longitude), data.type, UiConstants.EMPTY))
-                    viewModel.addGeoCode(response.data.mapToDbModel())
-                }
-                catch (e:Exception) {
-                    withContext(Dispatchers.Main) {
-                        Toast.makeText(requireContext(), R.string.something_went_wrong, Toast.LENGTH_SHORT).show()
-                    }
-                }
-            }
+            viewModel.addGeoCode(data.mapToDbModel())
+            Toast.makeText(requireContext(), R.string.success_save, Toast.LENGTH_SHORT).show()
         }
     }
 

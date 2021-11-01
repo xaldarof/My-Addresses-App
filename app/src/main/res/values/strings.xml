@@ -11,4 +11,7 @@
     <string name="downloading">Загрузка…</string>
     <string name="not_connection">Произошла ошибка…</string>
     <string name="something_went_wrong">Something went wrong...</string>
+    <string name="locations">Found locations</string>
+    <string name="success_save">Successfully saved to favorites.</string>
+    <string name="is_empty">Город не найден в данном локации !</string>
 </resources>

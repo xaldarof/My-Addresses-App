@@ -21,10 +21,11 @@
         android:id="@+id/historyFragment"
         android:name="com.example.myaddressesapp.ui.fragment.HistoryFragment"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" >
-        <action
-            android:id="@+id/action_historyFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
+        tools:layout="@layout/fragment_history">
+
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="com.example.myaddressesapp/ui/fragment/HistoryFragment" />
     </fragment>
 
 </navigation>

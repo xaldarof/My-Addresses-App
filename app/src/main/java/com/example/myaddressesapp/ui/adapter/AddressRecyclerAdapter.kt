@@ -1,16 +1,19 @@
 package com.example.myaddressesapp.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.HistoryItemBinding
+import com.example.myaddressesapp.ui.models.AddressUiModel
 
 class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val oldList = ArrayList<AddressModelDb>()
+    private val oldList = ArrayList<AddressUiModel>()
 
-    fun update(newList: List<AddressModelDb>){
+    @SuppressLint("NotifyDataSetChanged")
+    fun update(newList: List<AddressUiModel>){
         oldList.clear()
         oldList.addAll(newList)
         notifyDataSetChanged()
@@ -18,12 +21,13 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
 
     inner class VH(private val historyItemBinding: HistoryItemBinding):RecyclerView.ViewHolder(historyItemBinding.root){
 
-        fun onBind(addressModelDb: AddressModelDb){
-            historyItemBinding.addressName.text = addressModelDb.name
-            historyItemBinding.locationTv.text = addressModelDb.latitude.toString().plus(addressModelDb.longitude.toString())
+        @SuppressLint("SetTextI18n")
+        fun onBind(addressUiModel: AddressUiModel){
+            historyItemBinding.addressName.text = addressUiModel.name
+            historyItemBinding.addressLocation.text = "${addressUiModel.latitude},${addressUiModel.longitude}"
 
-            historyItemBinding.seeLocationBtn.setOnClickListener {
-                callback.onClickOpenMap(addressModelDb)
+            historyItemBinding.seeLocation.setOnClickListener {
+                callback.onClickOpenMap(addressUiModel)
             }
         }
     }
@@ -32,13 +36,15 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
         return VH(HistoryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+
+    @SuppressLint("NotifyDataSetChanged")
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder,position: Int) {
         (holder as VH).onBind(oldList[position])
     }
 
     override fun getItemCount(): Int = oldList.size
 
     interface CallBack {
-        fun onClickOpenMap(addressModelDb: AddressModelDb)
+        fun onClickOpenMap(addressUiModel: AddressUiModel)
     }
 }

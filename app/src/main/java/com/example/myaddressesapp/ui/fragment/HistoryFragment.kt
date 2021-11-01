@@ -14,7 +14,9 @@ import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.FragmentHistoryBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.AddressRecyclerAdapter
+import com.example.myaddressesapp.ui.models.AddressUiModel
 import com.example.myaddressesapp.vm.HistoryViewModel
+import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -42,9 +44,13 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack {
         }
     }
 
-    override fun onClickOpenMap(addressModelDb: AddressModelDb) {
+    override fun onClickOpenMap(addressUiModel: AddressUiModel) {
         val navController = findNavController()
-        navController.currentBackStackEntry?.savedStateHandle?.set(UiConstants.ADDRESS_ARG,addressModelDb)
+        navController
+            .currentBackStackEntry
+            ?.savedStateHandle
+            ?.set(UiConstants.ADDRESS_ARG, LatLng(addressUiModel.latitude,addressUiModel.longitude))
+
         navController.popBackStack()
     }
 }

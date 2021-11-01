@@ -12,7 +12,10 @@ import kotlinx.coroutines.flow.Flow
 interface AddressDao  {
 
     @Query("SELECT * FROM addresses")
-    fun fetchAddresses():Flow<List<AddressModelDb>>
+    fun fetchAddressesAsFlow():Flow<List<AddressModelDb>>
+
+    @Query("SELECT * FROM addresses")
+    fun fetchAddresses():List<AddressModelDb>
 
 
     @Query("DELETE FROM addresses WHERE name=:name")
