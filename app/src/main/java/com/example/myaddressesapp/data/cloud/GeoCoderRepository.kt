@@ -4,8 +4,9 @@ import com.example.myaddressesapp.data.cache.dao.AddressDao
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.AddressResponseBody
-import com.example.myaddressesapp.data.cloud.models.response.map.Data
 import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseModel
+import com.example.myaddressesapp.data.cloud.service.AddressService
+import com.example.myaddressesapp.data.cloud.service.GeoCodeService
 import javax.inject.Inject
 
 interface GeoCoderRepository {

@@ -35,6 +35,7 @@ anim nav_default_enter_anim
 anim nav_default_exit_anim
 anim nav_default_pop_enter_anim
 anim nav_default_pop_exit_anim
+anim shake_animation
 animator design_appbar_state_list_animator
 animator design_fab_hide_motion_spec
 animator design_fab_show_motion_spec
@@ -2164,7 +2165,6 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
-id imageView
 id immediateStop
 id included
 id info
@@ -2185,6 +2185,7 @@ id line3
 id linear
 id listMode
 id list_item
+id locationImg
 id locationTv
 id mapFragment
 id mapView
@@ -2738,6 +2739,7 @@ string path_password_eye_mask_strike_through
 string path_password_eye_mask_visible
 string path_password_strike_through
 string search_menu_title
+string something_went_wrong
 string status_bar_notification_info_overflow
 string test_city
 string test_location

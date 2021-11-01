@@ -1,8 +1,8 @@
 package com.example.myaddressesapp.data.cloud.di
 
-import com.example.myaddressesapp.data.cloud.AddressService
+import com.example.myaddressesapp.data.cloud.service.AddressService
 import com.example.myaddressesapp.data.cloud.CloudConstants
-import com.example.myaddressesapp.data.cloud.GeoCodeService
+import com.example.myaddressesapp.data.cloud.service.GeoCodeService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

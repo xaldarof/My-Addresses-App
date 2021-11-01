@@ -34,6 +34,7 @@ int anim nav_default_enter_anim 0x7f010020
 int anim nav_default_exit_anim 0x7f010021
 int anim nav_default_pop_enter_anim 0x7f010022
 int anim nav_default_pop_exit_anim 0x7f010023
+int anim shake_animation 0x7f010024
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
 int animator design_fab_show_motion_spec 0x7f020002
@@ -2163,7 +2164,6 @@ int id ifRoom 0x7f0800de
 int id ignore 0x7f0800df
 int id ignoreRequest 0x7f0800e0
 int id image 0x7f0800e1
-int id imageView 0x7f0800e2
 int id immediateStop 0x7f0800e3
 int id included 0x7f0800e4
 int id info 0x7f0800e5
@@ -2184,6 +2184,7 @@ int id line3 0x7f0800f3
 int id linear 0x7f0800f4
 int id listMode 0x7f0800f5
 int id list_item 0x7f0800f6
+int id locationImg 0x7f0801f2
 int id locationTv 0x7f0800f7
 int id mapFragment 0x7f0800f8
 int id mapView 0x7f0800f9
@@ -2737,6 +2738,7 @@ int string path_password_eye_mask_strike_through 0x7f10007b
 int string path_password_eye_mask_visible 0x7f10007c
 int string path_password_strike_through 0x7f10007d
 int string search_menu_title 0x7f10007e
+int string something_went_wrong 0x7f100087
 int string status_bar_notification_info_overflow 0x7f10007f
 int string test_city 0x7f100080
 int string test_location 0x7f100081

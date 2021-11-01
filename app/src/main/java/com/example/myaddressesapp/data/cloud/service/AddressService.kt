@@ -1,4 +1,4 @@
-package com.example.myaddressesapp.data.cloud
+package com.example.myaddressesapp.data.cloud.service
 
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.AddressResponseBody

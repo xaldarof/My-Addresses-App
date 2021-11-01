@@ -1,6 +1,7 @@
 package com.example.myaddressesapp.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.myaddressesapp.R
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.FragmentHistoryBinding
+import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.AddressRecyclerAdapter
 import com.example.myaddressesapp.vm.HistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,7 +25,7 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack {
     private lateinit var binding:FragmentHistoryBinding
     private val viewModel:HistoryViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentHistoryBinding.inflate(inflater,container,false)
         return binding.root
     }
@@ -41,7 +43,8 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack {
     }
 
     override fun onClickOpenMap(addressModelDb: AddressModelDb) {
-        findNavController().navigate(HistoryFragmentDirections
-            .actionHistoryFragmentToMapFragment(addressModelDb.mapToUiModel()))
+        val navController = findNavController()
+        navController.currentBackStackEntry?.savedStateHandle?.set(UiConstants.ADDRESS_ARG,addressModelDb)
+        navController.popBackStack()
     }
 }

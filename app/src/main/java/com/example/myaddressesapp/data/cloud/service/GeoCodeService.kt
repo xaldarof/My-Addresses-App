@@ -1,10 +1,8 @@
-package com.example.myaddressesapp.data.cloud
+package com.example.myaddressesapp.data.cloud.service
 
-import com.example.myaddressesapp.data.cloud.models.response.map.Data
+import com.example.myaddressesapp.data.cloud.CloudConstants
 import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseModel
 import retrofit2.http.GET
-import retrofit2.http.HTTP
-import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface GeoCodeService {

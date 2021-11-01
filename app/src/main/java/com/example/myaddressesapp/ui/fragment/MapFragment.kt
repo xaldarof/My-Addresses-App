@@ -12,9 +12,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.myaddressesapp.R
+import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.data.cloud.models.request.Address
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
 import com.example.myaddressesapp.data.cloud.models.response.map.Data
+import com.example.myaddressesapp.data.utils.bellAnimation
 import com.example.myaddressesapp.data.utils.formatToPosition
 import com.example.myaddressesapp.data.utils.isLocationPermissionGranted
 import com.example.myaddressesapp.databinding.FragmentMapBinding
@@ -68,10 +70,17 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
         binding.mapView.onResume()
 
-        val loc = LatLng(37.422160, -122.084270)
-        p0.animateCamera(CameraUpdateFactory.newLatLngZoom(loc, 15f))
-
+        findNavController().currentBackStackEntry?.savedStateHandle?.getLiveData<AddressModelDb>(UiConstants.ADDRESS_ARG)
+            ?.observe(viewLifecycleOwner,{
+                setBottomSheetData("${it.latitude},${it.longitude}")
+                navigateCamera(p0,LatLng(it.latitude,it.longitude))
+            })
     }
+
+    private fun  navigateCamera(googleMap: GoogleMap,latLng: LatLng){
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, UiConstants.ZOOM_STREET))
+    }
+
 
     private fun setBottomSheetData(query: String) {
         val adapter = BottomSheetRecyclerAdapter(this)
@@ -82,6 +91,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
             viewModel.fetchGeoCodeInfo(query).apply {
                 adapter.update(data)
                 binding.bottom.addLocationButton.text = UiConstants.ADD_TO_HISTORY
+                binding.locationImg.bellAnimation()
             }
         }catch (e:Exception){
                 Toast.makeText(requireContext(), R.string.not_connection, Toast.LENGTH_SHORT).show()
@@ -100,9 +110,16 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
     override fun onClickAddLocation(data: Data) {
         lifecycleScope.launch {
             withContext(Dispatchers.IO) {
-               val response = viewModel.createAddress(AddressRequestBody(data.label, Address(data.name, data.latitude,
-                    data.longitude), data.type, ""))
-                viewModel.addGeoCode(response.data.mapToDbModel())
+                try {
+                    val response = viewModel.createAddress(AddressRequestBody(data.label, Address(data.name, data.latitude,
+                    data.longitude), data.type, UiConstants.EMPTY))
+                    viewModel.addGeoCode(response.data.mapToDbModel())
+                }
+                catch (e:Exception) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(requireContext(), R.string.something_went_wrong, Toast.LENGTH_SHORT).show()
+                    }
+                }
             }
         }
     }

@@ -39,7 +39,7 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
 
     override fun getItemCount(): Int = oldList.size
 
-    interface CallBack{
+    interface CallBack {
         fun onClickAddLocation(data: Data)
     }
 }
