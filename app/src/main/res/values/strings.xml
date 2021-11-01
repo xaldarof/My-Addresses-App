@@ -16,4 +16,8 @@
     <string name="is_empty">Город не найден в данном локации !</string>
     <string name="save">save</string>
     <string name="cancel">CANCEL</string>
+    <string name="saved">Сохраненные</string>
+    <string name="success_delete">Успешно удалено.</string>
+    <string name="do_you_want_clear">You really want to clear all ?</string>
+    <string name="delete">Очистить</string>
 </resources>

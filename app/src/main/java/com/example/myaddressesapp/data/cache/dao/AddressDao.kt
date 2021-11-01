@@ -25,5 +25,8 @@ interface AddressDao  {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addAddress(addressModelDb: AddressModelDb)
 
+    @Query("DELETE FROM addresses")
+    fun clearCache()
+
 
 }

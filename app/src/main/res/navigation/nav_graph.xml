@@ -9,14 +9,17 @@
         android:id="@+id/mapFragment"
         android:name="com.example.myaddressesapp.ui.fragment.MapFragment"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" >
+        tools:layout="@layout/fragment_map">
+
         <action
             android:id="@+id/action_mapFragment_to_historyFragment"
             app:destination="@id/historyFragment" />
         <argument
             android:name="address"
             app:argType="com.example.myaddressesapp.ui.models.AddressUiModel" />
+
     </fragment>
+
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.myaddressesapp.ui.fragment.HistoryFragment"
@@ -26,6 +29,7 @@
         <deepLink
             android:id="@+id/deepLink"
             app:uri="com.example.myaddressesapp/ui/fragment/HistoryFragment" />
+
     </fragment>
 
 </navigation>

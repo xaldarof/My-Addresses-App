@@ -34,6 +34,8 @@ int anim nav_default_enter_anim 0x7f010020
 int anim nav_default_exit_anim 0x7f010021
 int anim nav_default_pop_enter_anim 0x7f010022
 int anim nav_default_pop_exit_anim 0x7f010023
+int anim paging_enter_anim 0x7f010026
+int anim paging_exit_anim 0x7f010027
 int anim shake_animation 0x7f010024
 int animator design_appbar_state_list_animator 0x7f020000
 int animator design_fab_hide_motion_spec 0x7f020001
@@ -1848,6 +1850,7 @@ int drawable abc_textfield_search_material 0x7f070054
 int drawable abc_vector_test 0x7f070055
 int drawable avd_hide_password 0x7f070056
 int drawable avd_show_password 0x7f070057
+int drawable back_view_background 0x7f0700b3
 int drawable btn_checkbox_checked_mtrl 0x7f070058
 int drawable btn_checkbox_checked_to_unchecked_mtrl_animation 0x7f070059
 int drawable btn_checkbox_unchecked_mtrl 0x7f07005a
@@ -1889,6 +1892,7 @@ int drawable history_item_background 0x7f07007c
 int drawable ic_baseline_add_24 0x7f07007d
 int drawable ic_baseline_add_location_alt_24 0x7f07007e
 int drawable ic_baseline_chevron_left_24 0x7f07007f
+int drawable ic_baseline_cleaning_services_24 0x7f0700b4
 int drawable ic_baseline_history_24 0x7f070080
 int drawable ic_baseline_home_24 0x7f070081
 int drawable ic_baseline_location_on_24 0x7f070082
@@ -2034,6 +2038,7 @@ int id auto 0x7f08005a
 int id autoComplete 0x7f08005b
 int id autoCompleteToEnd 0x7f08005c
 int id autoCompleteToStart 0x7f08005d
+int id backBtn 0x7f0801ff
 int id barrier 0x7f08005e
 int id baseline 0x7f08005f
 int id beginOnFirstDraw 0x7f080060
@@ -2066,6 +2071,7 @@ int id chip3 0x7f080079
 int id chip_group 0x7f08007a
 int id chronometer 0x7f08007b
 int id circle_center 0x7f08007c
+int id clearAlLBtn 0x7f080200
 int id clear_text 0x7f08007d
 int id clip_horizontal 0x7f08007e
 int id clip_vertical 0x7f08007f
@@ -2093,6 +2099,7 @@ int id decelerateAndComplete 0x7f080094
 int id decor_content_parent 0x7f080095
 int id deepLink 0x7f0801f8
 int id default_activity_button 0x7f080096
+int id deleteBtn 0x7f080201
 int id deltaRelative 0x7f080097
 int id dependency_ordering 0x7f080098
 int id design_bottom_sheet 0x7f080099
@@ -2396,6 +2403,7 @@ int id textSpacerNoButtons 0x7f0801bd
 int id textSpacerNoTitle 0x7f0801be
 int id textStart 0x7f0801bf
 int id textTop 0x7f0801c0
+int id textView 0x7f080202
 int id text_input_end_icon 0x7f0801c1
 int id text_input_error_icon 0x7f0801c2
 int id text_input_start_icon 0x7f0801c3
@@ -2517,6 +2525,7 @@ int layout activity_main 0x7f0b001c
 int layout bottom_sheet 0x7f0b001d
 int layout bottom_sheet_item_layout 0x7f0b001e
 int layout custom_dialog 0x7f0b001f
+int layout delete_layout 0x7f0b0080
 int layout design_bottom_navigation_item 0x7f0b0020
 int layout design_bottom_sheet_dialog 0x7f0b0021
 int layout design_layout_snackbar 0x7f0b0022
@@ -2676,6 +2685,8 @@ int string common_google_play_services_wear_update_text 0x7f100034
 int string common_open_on_phone 0x7f100035
 int string common_signin_button_text 0x7f100036
 int string common_signin_button_text_long 0x7f100037
+int string delete 0x7f10008f
+int string do_you_want_clear 0x7f100090
 int string downloading 0x7f100085
 int string error_icon_content_description 0x7f100038
 int string exposed_dropdown_menu_content_description 0x7f100039
@@ -2751,9 +2762,11 @@ int string path_password_eye_mask_strike_through 0x7f10007b
 int string path_password_eye_mask_visible 0x7f10007c
 int string path_password_strike_through 0x7f10007d
 int string save 0x7f10008c
+int string saved 0x7f10008d
 int string search_menu_title 0x7f10007e
 int string something_went_wrong 0x7f100087
 int string status_bar_notification_info_overflow 0x7f10007f
+int string success_delete 0x7f10008e
 int string success_save 0x7f100089
 int string test_city 0x7f100080
 int string test_location 0x7f100081

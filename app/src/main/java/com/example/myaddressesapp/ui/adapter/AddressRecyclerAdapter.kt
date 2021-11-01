@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myaddressesapp.data.cache.models.AddressModelDb
 import com.example.myaddressesapp.databinding.HistoryItemBinding
 import com.example.myaddressesapp.ui.models.AddressUiModel
 
@@ -36,6 +35,7 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
         return VH(HistoryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
+    fun getItemByPosition(position: Int) = oldList[position].name
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder,position: Int) {

@@ -43,7 +43,7 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
         binding = FragmentMapBinding.inflate(inflater, container, false)
         BottomSheetBehavior.from(binding.bottom.bottomContainer).apply {
             state = BottomSheetBehavior.STATE_COLLAPSED
-            peekHeight = 200
+            peekHeight = 230
         }
         return binding.root
     }
@@ -76,9 +76,8 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
                     val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
                     viewModel.addGeoCode(address.mapToUiModel())
 
-                    Toast.makeText(requireContext(), R.string.success_save, Toast.LENGTH_SHORT)
-                        .show()
-                } else {
+                    ChangeNameDialog.Base(requireContext()).show(address.mapToUiModel(),this@MapFragment)
+                }else {
                     Toast.makeText(requireContext(), R.string.is_empty, Toast.LENGTH_SHORT).show()
                 }
             }

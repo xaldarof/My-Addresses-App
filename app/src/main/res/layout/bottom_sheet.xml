@@ -31,8 +31,8 @@
                 <TextView
                     android:layout_width="42dp"
                     android:layout_height="2dp"
-                    android:layout_margin="8dp"
                     android:layout_gravity="center"
+                    android:layout_margin="8dp"
                     android:background="@color/black" />
 
                 <RelativeLayout
@@ -56,7 +56,7 @@
                     android:id="@+id/addLocationButton"
                     android:layout_width="match_parent"
                     android:layout_height="?actionBarSize"
-                    android:layout_margin="24dp"
+                    android:layout_margin="14dp"
                     android:background="@drawable/button_background"
                     android:backgroundTint="@color/orange"
                     android:text="@string/add"

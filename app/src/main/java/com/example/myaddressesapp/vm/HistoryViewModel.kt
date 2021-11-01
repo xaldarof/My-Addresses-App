@@ -19,4 +19,6 @@ class HistoryViewModel
 
     fun addAddress(addressModelDb: AddressModelDb) = cacheRepository.addAddress(addressModelDb)
 
+    fun clearCache() = cacheRepository.clearCache()
+
 }
