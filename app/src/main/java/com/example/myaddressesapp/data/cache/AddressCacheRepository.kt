@@ -2,6 +2,7 @@ package com.example.myaddressesapp.data.cache
 
 import com.example.myaddressesapp.data.cache.dao.AddressDao
 import com.example.myaddressesapp.data.cache.models.AddressModelDb
+import com.example.myaddressesapp.data.cache.models.UserLocation
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
@@ -15,7 +16,12 @@ interface AddressCacheRepository {
     fun addAddress(addressModelDb: AddressModelDb)
     fun clearCache()
 
-    class Base @Inject constructor(private val dao: AddressDao): AddressCacheRepository {
+    fun saveUserLastLocation(userLocation: UserLocation)
+    suspend fun fetchUserLastLocation(): UserLocation
+
+    class Base @Inject constructor(private val dao: AddressDao,
+                                   private val userLastLocationDataSource: UserLastLocationDataSource):
+        AddressCacheRepository {
 
         override fun fetchAddressesAsFlow(): Flow<List<AddressModelDb>> = dao.fetchAddressesAsFlow()
 
@@ -26,5 +32,14 @@ interface AddressCacheRepository {
         override fun addAddress(addressModelDb: AddressModelDb) = dao.addAddress(addressModelDb)
 
         override fun clearCache() = dao.clearCache()
+
+
+        override fun saveUserLastLocation(userLocation: UserLocation) {
+            userLastLocationDataSource.saveUserLastLocation(userLocation)
+        }
+
+        override suspend fun fetchUserLastLocation(): UserLocation {
+            return userLastLocationDataSource.fetchUserLastLocation()
+        }
     }
 }

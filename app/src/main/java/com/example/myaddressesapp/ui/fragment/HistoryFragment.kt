@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.R
+import com.example.myaddressesapp.data.cache.models.UserLocation
 import com.example.myaddressesapp.databinding.FragmentHistoryBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.AddressRecyclerAdapter
@@ -74,13 +75,8 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack,ClearAllDia
     }
 
     override fun onClickOpenMap(addressUiModel: AddressUiModel) {
-        val navController = findNavController()
-        navController
-            .currentBackStackEntry
-            ?.savedStateHandle
-            ?.set(UiConstants.ADDRESS_ARG, LatLng(addressUiModel.latitude,addressUiModel.longitude))
-
-        navController.popBackStack()
+        viewModel.saveUserLastLocation(UserLocation(addressUiModel.latitude,addressUiModel.longitude))
+        findNavController().popBackStack()
     }
 
     @SuppressLint("NotifyDataSetChanged")

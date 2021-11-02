@@ -16,160 +16,163 @@
 12    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 12-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:8:5-79
 12-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:8:22-76
-13
-14    <!-- Include required permissions for Google Maps API to run. -->
-15    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-15-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:5-79
-15-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:22-76
-16
-17    <uses-feature
-17-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:26:5-28:35
-18        android:glEsVersion="0x00020000"
-18-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:27:9-41
-19        android:required="true" />
-19-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:28:9-32
-20
-21    <queries>
-21-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:30:5-34:15
-22
-23        <!-- Needs to be explicitly declared on Android R+ -->
-24        <package android:name="com.google.android.apps.maps" />
-24-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:9-64
-24-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:18-61
-25    </queries>
-26
-27    <application
-27-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:10:5-34:19
-28        android:name="com.example.myaddressesapp.core.App"
-28-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:11:9-33
-29        android:allowBackup="true"
-29-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:12:9-35
-30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-30-->[androidx.core:core:1.6.0] C:\Users\Normal_User\.gradle\caches\transforms-3\5e6df1cd068fc4078e0efd6e13868617\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
-31        android:debuggable="true"
-32        android:icon="@mipmap/ic_launcher"
-32-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:13:9-43
-33        android:label="@string/app_name"
-33-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:14:9-41
-34        android:roundIcon="@mipmap/ic_launcher_round"
-34-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:15:9-54
-35        android:supportsRtl="true"
-35-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:16:9-35
-36        android:testOnly="true"
-37        android:theme="@style/Theme.MyAddressesApp" >
-37-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:17:9-52
-38        <activity
-38-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:20:9-28:20
-39            android:name="com.example.myaddressesapp.ui.activity.MainActivity"
-39-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:21:13-53
-40            android:exported="true" >
-40-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:22:13-36
-41            <intent-filter>
-41-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:23:13-27:29
-42                <action android:name="android.intent.action.MAIN" />
-42-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:24:17-69
-42-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:24:25-66
-43
-44                <category android:name="android.intent.category.LAUNCHER" />
-44-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:26:17-77
-44-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:26:27-74
-45            </intent-filter>
-46        </activity>
-47
-48        <meta-data
-48-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:30:9-32:47
-49            android:name="com.google.android.maps.v2.API_KEY"
-49-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:31:13-62
-50            android:value="@string/api_key" />
-50-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:32:13-44
-51
-52        <provider
-52-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:23:9-26:40
-53            android:name="com.readystatesoftware.chuck.internal.data.ChuckContentProvider"
-53-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:24:13-91
-54            android:authorities="com.example.myaddressesapp.chuck.provider"
-54-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:25:13-66
-55            android:exported="false" />
-55-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:26:13-37
-56
-57        <activity
-57-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:28:9-33:50
-58            android:name="com.readystatesoftware.chuck.internal.ui.MainActivity"
-58-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:29:13-81
-59            android:label="@string/chuck_name"
-59-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:30:13-47
-60            android:launchMode="singleTask"
-60-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:31:13-44
-61            android:taskAffinity="com.readystatesoftware.chuck.task"
-61-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:32:13-69
-62            android:theme="@style/Chuck.Theme" />
-62-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:33:13-47
-63        <activity
-63-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:34:9-37:50
-64            android:name="com.readystatesoftware.chuck.internal.ui.TransactionActivity"
-64-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:35:13-88
-65            android:parentActivityName="com.readystatesoftware.chuck.internal.ui.MainActivity"
-65-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:36:13-95
-66            android:theme="@style/Chuck.Theme" />
-66-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:37:13-47
-67
-68        <service
-68-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:39:9-41:40
-69            android:name="com.readystatesoftware.chuck.internal.support.ClearTransactionsService"
-69-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:40:13-98
-70            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
-70-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\4f24d32e1de6e08bb2529c19f51c62d8\transformed\jetified-library-1.1.0\AndroidManifest.xml:41:13-37
-71        <uses-library
-71-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
-72            android:name="org.apache.http.legacy"
-72-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
-73            android:required="false" />
-73-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\eb99ef77fcdeee1cb1bf380fce39887b\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
-74
-75        <provider
-75-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\58e74b373926721abdc696754d1ce86a\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-76            android:name="com.squareup.picasso.PicassoProvider"
-76-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\58e74b373926721abdc696754d1ce86a\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-77            android:authorities="com.example.myaddressesapp.com.squareup.picasso"
-77-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\58e74b373926721abdc696754d1ce86a\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-78            android:exported="false" />
-78-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\58e74b373926721abdc696754d1ce86a\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-79
-80        <service
-80-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\121cc281b162119f953323e17f5cf935\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
-81            android:name="androidx.room.MultiInstanceInvalidationService"
-81-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\121cc281b162119f953323e17f5cf935\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
-82            android:directBootAware="true"
-82-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\121cc281b162119f953323e17f5cf935\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
-83            android:exported="false" />
-83-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\121cc281b162119f953323e17f5cf935\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
-84
-85        <activity
-85-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\8e60df914db6c92f154101fc3b9806d2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
-86            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-86-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\8e60df914db6c92f154101fc3b9806d2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
-87            android:exported="false"
-87-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\8e60df914db6c92f154101fc3b9806d2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
-88            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-88-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\8e60df914db6c92f154101fc3b9806d2\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
-89
-90        <meta-data
-90-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\bca36eb2189499ccde123f933969e28a\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
-91            android:name="com.google.android.gms.version"
-91-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\bca36eb2189499ccde123f933969e28a\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
-92            android:value="@integer/google_play_services_version" />
-92-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\bca36eb2189499ccde123f933969e28a\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
-93
-94        <provider
-94-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\11ca9bc37af899858a4b9f3af563aeab\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-95            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-95-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\11ca9bc37af899858a4b9f3af563aeab\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-96            android:authorities="com.example.myaddressesapp.lifecycle-process"
-96-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\11ca9bc37af899858a4b9f3af563aeab\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-97            android:exported="false"
-97-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\11ca9bc37af899858a4b9f3af563aeab\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-98            android:multiprocess="true" />
-98-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\11ca9bc37af899858a4b9f3af563aeab\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-99    </application>
-100
-101</manifest>
+13    <uses-permission android:name="android.permission.VIBRATE" />
+13-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:9:5-65
+13-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:9:22-63
+14
+15    <!-- Include required permissions for Google Maps API to run. -->
+16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+16-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:5-79
+16-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:23:22-76
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:28:9-32
+21
+22    <queries>
+22-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:30:5-34:15
+23
+24        <!-- Needs to be explicitly declared on Android R+ -->
+25        <package android:name="com.google.android.apps.maps" />
+25-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:9-64
+25-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:33:18-61
+26    </queries>
+27
+28    <application
+28-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:11:5-35:19
+29        android:name="com.example.myaddressesapp.core.App"
+29-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:12:9-33
+30        android:allowBackup="true"
+30-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:13:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.6.0] C:\Users\Normal_User\.gradle\caches\transforms-3\63533fc8fc84a5230c1a69f05bf34f09\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/ic_launcher"
+33-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:14:9-43
+34        android:label="@string/app_name"
+34-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:15:9-41
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:16:9-54
+36        android:supportsRtl="true"
+36-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:17:9-35
+37        android:testOnly="true"
+38        android:theme="@style/Theme.MyAddressesApp" >
+38-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:18:9-52
+39        <activity
+39-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:21:9-29:20
+40            android:name="com.example.myaddressesapp.ui.activity.MainActivity"
+40-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:22:13-53
+41            android:exported="true" >
+41-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:23:13-36
+42            <intent-filter>
+42-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:24:13-28:29
+43                <action android:name="android.intent.action.MAIN" />
+43-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:25:17-69
+43-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:25:25-66
+44
+45                <category android:name="android.intent.category.LAUNCHER" />
+45-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:27:17-77
+45-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:27:27-74
+46            </intent-filter>
+47        </activity>
+48
+49        <meta-data
+49-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:31:9-33:47
+50            android:name="com.google.android.maps.v2.API_KEY"
+50-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:32:13-62
+51            android:value="@string/api_key" />
+51-->C:\Users\Normal_User\AndroidStudioProjects\MyAddressesApp\app\src\main\AndroidManifest.xml:33:13-44
+52
+53        <provider
+53-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:23:9-26:40
+54            android:name="com.readystatesoftware.chuck.internal.data.ChuckContentProvider"
+54-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:24:13-91
+55            android:authorities="com.example.myaddressesapp.chuck.provider"
+55-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:25:13-66
+56            android:exported="false" />
+56-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:26:13-37
+57
+58        <activity
+58-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:28:9-33:50
+59            android:name="com.readystatesoftware.chuck.internal.ui.MainActivity"
+59-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:29:13-81
+60            android:label="@string/chuck_name"
+60-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:30:13-47
+61            android:launchMode="singleTask"
+61-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:31:13-44
+62            android:taskAffinity="com.readystatesoftware.chuck.task"
+62-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:32:13-69
+63            android:theme="@style/Chuck.Theme" />
+63-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:33:13-47
+64        <activity
+64-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:34:9-37:50
+65            android:name="com.readystatesoftware.chuck.internal.ui.TransactionActivity"
+65-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:35:13-88
+66            android:parentActivityName="com.readystatesoftware.chuck.internal.ui.MainActivity"
+66-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:36:13-95
+67            android:theme="@style/Chuck.Theme" />
+67-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:37:13-47
+68
+69        <service
+69-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:39:9-41:40
+70            android:name="com.readystatesoftware.chuck.internal.support.ClearTransactionsService"
+70-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:40:13-98
+71            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
+71-->[com.readystatesoftware.chuck:library:1.1.0] C:\Users\Normal_User\.gradle\caches\transforms-3\67f530731647ae9eb33adb84720e75fd\transformed\jetified-library-1.1.0\AndroidManifest.xml:41:13-37
+72        <uses-library
+72-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:39:9-41:40
+73            android:name="org.apache.http.legacy"
+73-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:40:13-50
+74            android:required="false" />
+74-->[com.google.android.gms:play-services-maps:17.0.1] C:\Users\Normal_User\.gradle\caches\transforms-3\e3e77078f2a16560bc75f4dfba8ab2a9\transformed\jetified-play-services-maps-17.0.1\AndroidManifest.xml:41:13-37
+75
+76        <provider
+76-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\de38b918b81d5c6d47061610f8262226\transformed\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+77            android:name="com.squareup.picasso.PicassoProvider"
+77-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\de38b918b81d5c6d47061610f8262226\transformed\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+78            android:authorities="com.example.myaddressesapp.com.squareup.picasso"
+78-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\de38b918b81d5c6d47061610f8262226\transformed\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+79            android:exported="false" />
+79-->[com.squareup.picasso:picasso:2.71828] C:\Users\Normal_User\.gradle\caches\transforms-3\de38b918b81d5c6d47061610f8262226\transformed\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+80
+81        <service
+81-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\f93546b19014f8efe49542b99df5e0ae\transformed\room-runtime-2.3.0\AndroidManifest.xml:25:9-28:40
+82            android:name="androidx.room.MultiInstanceInvalidationService"
+82-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\f93546b19014f8efe49542b99df5e0ae\transformed\room-runtime-2.3.0\AndroidManifest.xml:26:13-74
+83            android:directBootAware="true"
+83-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\f93546b19014f8efe49542b99df5e0ae\transformed\room-runtime-2.3.0\AndroidManifest.xml:27:13-43
+84            android:exported="false" />
+84-->[androidx.room:room-runtime:2.3.0] C:\Users\Normal_User\.gradle\caches\transforms-3\f93546b19014f8efe49542b99df5e0ae\transformed\room-runtime-2.3.0\AndroidManifest.xml:28:13-37
+85
+86        <activity
+86-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\fe5098d32d12ef5ff69d8139cecd3ca9\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:23:9-26:75
+87            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+87-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\fe5098d32d12ef5ff69d8139cecd3ca9\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:24:13-79
+88            android:exported="false"
+88-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\fe5098d32d12ef5ff69d8139cecd3ca9\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:25:13-37
+89            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+89-->[com.google.android.gms:play-services-base:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\fe5098d32d12ef5ff69d8139cecd3ca9\transformed\jetified-play-services-base-17.5.0\AndroidManifest.xml:26:13-72
+90
+91        <meta-data
+91-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\829e8e0df5a792cc7e8933765121408d\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:23:9-25:69
+92            android:name="com.google.android.gms.version"
+92-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\829e8e0df5a792cc7e8933765121408d\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:24:13-58
+93            android:value="@integer/google_play_services_version" />
+93-->[com.google.android.gms:play-services-basement:17.5.0] C:\Users\Normal_User\.gradle\caches\transforms-3\829e8e0df5a792cc7e8933765121408d\transformed\jetified-play-services-basement-17.5.0\AndroidManifest.xml:25:13-66
+94
+95        <provider
+95-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\1345db8b4c19b3ef34c13a8838bc3773\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+96            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+96-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\1345db8b4c19b3ef34c13a8838bc3773\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+97            android:authorities="com.example.myaddressesapp.lifecycle-process"
+97-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\1345db8b4c19b3ef34c13a8838bc3773\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+98            android:exported="false"
+98-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\1345db8b4c19b3ef34c13a8838bc3773\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+99            android:multiprocess="true" />
+99-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\Normal_User\.gradle\caches\transforms-3\1345db8b4c19b3ef34c13a8838bc3773\transformed\jetified-lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+100    </application>
+101
+102</manifest>
