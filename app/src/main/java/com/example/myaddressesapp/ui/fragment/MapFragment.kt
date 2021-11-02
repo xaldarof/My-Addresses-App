@@ -23,25 +23,21 @@ import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.model.Marker
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,
-    GoogleMap.OnMarkerClickListener,ChangeNameDialog.CallBack {
+    ChangeNameDialog.CallBack {
 
     private lateinit var binding: FragmentMapBinding
     private val viewModel: MainViewModel by viewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-
         binding = FragmentMapBinding.inflate(inflater, container, false)
-        BottomSheetBehavior.from(binding.bottom.bottomContainer).apply {
-            state = BottomSheetBehavior.STATE_COLLAPSED
-            peekHeight = 230
-        }
+        binding.bottom.bottomContainer.collapse()
         return binding.root
     }
 
@@ -75,16 +71,24 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
 
         binding.bottom.addLocationButton.setOnClickListener {
             lifecycleScope.launch {
-                val currentLocation = p0.formatToPosition()
+                try {
+                    val currentLocation = p0.formatToPosition()
 
-                if (currentLocation.isNotEmpty()) {
-                    val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
-                    viewModel.addGeoCode(address.mapToUiModel())
+                    if (currentLocation.isNotEmpty()) {
+                        val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
+                        viewModel.addGeoCode(address.mapToUiModel())
+                        binding.bottom.addLocationButton.disable()
 
-                    ChangeNameDialog.Base(requireContext()).show(address.mapToUiModel(),this@MapFragment)
-                }
-                else {
-                    Toast.makeText(requireContext(), R.string.is_empty, Toast.LENGTH_SHORT).show()
+                        ChangeNameDialog.Base(requireContext()).show(address.mapToUiModel(), this@MapFragment)
+                        binding.bottom.addLocationButton.enable()
+
+                    } else {
+                        Toast.makeText(requireContext(), R.string.is_empty, Toast.LENGTH_SHORT)
+                            .show()
+                    }
+                }catch (e:Exception){
+                    Toast.makeText(requireContext(), R.string.something_went_wrong, Toast.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
@@ -94,6 +98,16 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
         googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, UiConstants.ZOOM_STREET))
     }
 
+    private fun setOnCameraChangeListener(googleMap: GoogleMap) {
+        googleMap.setOnCameraMoveListener {
+            lifecycleScope.launch {
+                setBottomSheetData(googleMap.formatToPosition())
+                delay(1000)
+            }
+        }
+    }
+
+
     private fun setBottomSheetData(query: String) {
         val adapter = BottomSheetRecyclerAdapter(this)
         binding.bottom.rv.adapter = adapter
@@ -102,29 +116,19 @@ class MapFragment: Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.Ca
             try {
                 viewModel.fetchGeoCodeInfo(query).apply {
                     adapter.update(data)
-                    binding.bottom.addLocationButton.enable()
+                    if (this.data.size > 1){
+                        binding.bottom.bottomContainer.expand()
+                    }
                 }
             } catch (e: Exception) {
                 Toast.makeText(requireContext(), R.string.not_connection, Toast.LENGTH_SHORT).show()
-                binding.bottom.addLocationButton.enable()
             }
         }
     }
 
-    private fun setOnCameraChangeListener(googleMap: GoogleMap) {
-        googleMap.setOnCameraMoveListener {
-            binding.bottom.addLocationButton.disable()
-            setBottomSheetData(googleMap.formatToPosition())
-        }
-    }
 
     override fun onClickAddLocation(data: Data) {
         ChangeNameDialog.Base(requireContext()).show(data.mapToUiModel(),this@MapFragment)
-    }
-
-    override fun onMarkerClick(p0: Marker): Boolean {
-        setBottomSheetData("${p0.position.latitude},${p0.position.longitude}")
-        return true
     }
 
     override fun onClickSave(uiModel: AddressUiModel) {

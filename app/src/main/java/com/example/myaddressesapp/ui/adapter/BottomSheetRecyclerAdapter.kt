@@ -8,6 +8,7 @@ import com.example.myaddressesapp.R
 import com.example.myaddressesapp.data.cache.AddressCacheRepository
 import com.example.myaddressesapp.data.cloud.models.response.map.Data
 import com.example.myaddressesapp.databinding.BottomSheetItemLayoutBinding
+import com.example.myaddressesapp.utils.copyText
 import javax.inject.Inject
 
 class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -29,6 +30,10 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
 
             bottomSheetItemLayoutBinding.addressName.text = data.name
             bottomSheetItemLayoutBinding.locationTv.text = data.latitude.toString().plus(",${data.longitude}")
+
+            bottomSheetItemLayoutBinding.locationTv.setOnClickListener {
+                bottomSheetItemLayoutBinding.locationTv.copyText()
+            }
 
             bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener {
                 callback.onClickAddLocation(data)

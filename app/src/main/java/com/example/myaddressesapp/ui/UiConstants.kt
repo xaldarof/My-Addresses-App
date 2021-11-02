@@ -11,4 +11,5 @@ object UiConstants {
 
     const val ADDRESS_ARG = "address"
     const val EMPTY = ""
+    const val CLIP_BOARD = "copy_text"
 }

@@ -1,11 +1,14 @@
 package com.example.myaddressesapp.data.cloud.di
 
+import android.content.Context
 import com.example.myaddressesapp.data.cloud.service.AddressService
 import com.example.myaddressesapp.data.cloud.CloudConstants
 import com.example.myaddressesapp.data.cloud.service.GeoCodeService
+import com.readystatesoftware.chuck.ChuckInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -31,11 +34,22 @@ object CloudModule {
 
     @Singleton
     @Provides
+    @CreateMapLocationClient
     fun provideHttpClient(interceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(interceptor)
             .build()
     }
+
+    @Singleton
+    @Provides
+    @CustomGeoCoderClient
+    fun provideGeoCoderHttpClient(@ApplicationContext context: Context) : OkHttpClient {
+        return OkHttpClient.Builder()
+            .addInterceptor(ChuckInterceptor(context))
+            .build()
+    }
+
 
     @Singleton
     @Provides
@@ -50,7 +64,8 @@ object CloudModule {
     @Provides
     @Singleton
     @CreateMapLocationRetrofit
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+
+    fun provideRetrofit(@CreateMapLocationClient okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
@@ -58,11 +73,14 @@ object CloudModule {
             .build()
     }
 
+
+
     @Provides
     @Singleton
     @CustomGeoCoder
-    fun provideGeoCoderRetrofit(): Retrofit {
+    fun provideGeoCoderRetrofit(@CustomGeoCoderClient okHttpClient: OkHttpClient): Retrofit {
         return Retrofit.Builder()
+            .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(CloudConstants.GEO_CODER_BASE_URL)
             .build()

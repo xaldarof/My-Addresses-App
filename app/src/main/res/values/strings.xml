@@ -20,4 +20,5 @@
     <string name="success_delete">Успешно удалено.</string>
     <string name="do_you_want_clear">You really want to clear all ?</string>
     <string name="delete">Очистить</string>
+    <string name="success_copy">Successfully copied to clipboard.</string>
 </resources>

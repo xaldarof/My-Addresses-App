@@ -13,6 +13,7 @@
         android:background="@drawable/edit_text_background"
         android:elevation="2dp"
         android:hint="@string/test_city"
+        android:inputType="textPersonName"
         android:paddingStart="24dp"
         android:paddingEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
