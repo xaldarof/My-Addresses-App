@@ -113,13 +113,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
     }
 
     private fun setOnCameraChangeListener(googleMap: GoogleMap) {
-        googleMap.setOnCameraMoveListener {
+        googleMap.setOnCameraIdleListener {
             lifecycleScope.launch {
                 viewModel.saveUserLastLocation(
-                    UserLocation(
-                        googleMap.cameraPosition.target.latitude,
-                        googleMap.cameraPosition.target.longitude)
-                )
+                    UserLocation(googleMap.cameraPosition.target.latitude,
+                        googleMap.cameraPosition.target.longitude))
                 setBottomSheetData(googleMap.formatToPosition())
             }
         }

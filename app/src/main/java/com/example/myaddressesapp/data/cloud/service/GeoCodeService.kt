@@ -9,7 +9,7 @@ interface GeoCodeService {
 
     @GET("reverse")
     suspend fun fetchAddressInfo(
-        @Query("access_key") access_key:String = CloudConstants.GEO_CODER_KEY,
+            @Query("access_key") access_key:String = CloudConstants.GEO_CODER_KEY,
         @Query("query") query:String
     ): GeoCoderResponseModel
 
