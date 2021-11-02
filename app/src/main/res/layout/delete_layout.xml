@@ -28,6 +28,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginBottom="24dp"
         android:background="@drawable/button_background"
+        android:backgroundTint="@color/orange"
         android:text="@string/delete"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

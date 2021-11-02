@@ -12,6 +12,6 @@ object CloudConstants {
 
 
     const val GEO_CODER_BASE_URL = "http://api.positionstack.com/v1/"
-    const val GEO_CODER_KEY = "ae45cf426a3163d1851389a2465cca7b"
+    const val GEO_CODER_KEY = "a37e5b394c67b3a06c30e59c919840aa"
 
 }

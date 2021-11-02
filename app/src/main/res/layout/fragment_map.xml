@@ -76,6 +76,16 @@
             android:src="@drawable/ic_baseline_remove_24"
             app:tint="@color/black" />
 
+        <ImageView
+            android:id="@+id/selectMap"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/back_view_background"
+            android:padding="12dp"
+            android:src="@drawable/ic_baseline_style_24"
+            app:tint="@color/black" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

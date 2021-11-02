@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.databinding.HistoryItemBinding
 import com.example.myaddressesapp.ui.models.AddressUiModel
+import com.example.myaddressesapp.utils.copyText
 
 class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
@@ -27,6 +28,10 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
 
             historyItemBinding.seeLocation.setOnClickListener {
                 callback.onClickOpenMap(addressUiModel)
+            }
+
+            historyItemBinding.addressLocation.setOnClickListener {
+                historyItemBinding.addressLocation.copyText()
             }
         }
     }

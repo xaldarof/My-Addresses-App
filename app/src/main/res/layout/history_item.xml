@@ -35,6 +35,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addressName" />
 
+
+    <ImageView
+        android:layout_width="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_baseline_content_copy_24"
+        app:layout_constraintBottom_toBottomOf="@+id/addressLocation"
+        app:layout_constraintStart_toEndOf="@+id/addressLocation"
+        app:layout_constraintTop_toTopOf="@+id/addressLocation" />
+
     <ImageView
         android:id="@+id/testBtn"
         android:layout_width="36dp"

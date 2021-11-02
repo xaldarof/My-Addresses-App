@@ -2,6 +2,7 @@ package com.example.myaddressesapp.ui.fragment
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -18,6 +19,7 @@ import com.example.myaddressesapp.databinding.FragmentMapBinding
 import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.ui.adapter.BottomSheetRecyclerAdapter
 import com.example.myaddressesapp.ui.dialogs.ChangeNameDialog
+import com.example.myaddressesapp.ui.dialogs.SelectMapStyleDialog
 import com.example.myaddressesapp.ui.models.AddressUiModel
 import com.example.myaddressesapp.vm.MainViewModel
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -25,20 +27,21 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.model.LatLng
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import java.io.FileNotFoundException
 
 @AndroidEntryPoint
 class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.CallBack,
-    ChangeNameDialog.CallBack {
+    ChangeNameDialog.CallBack, SelectMapStyleDialog.CallBack {
 
     private lateinit var binding: FragmentMapBinding
     private val viewModel: MainViewModel by viewModels()
+    private lateinit var googleMap: GoogleMap
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentMapBinding.inflate(inflater, container, false)
         binding.bottom.bottomContainer.collapse()
         return binding.root
@@ -51,13 +54,20 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         binding.historyBtn.setOnClickListener {
             findNavController().navigate(MapFragmentDirections.actionMapFragmentToHistoryFragment())
         }
+
+        binding.selectMap.setOnClickListener {
+            SelectMapStyleDialog.Base(requireContext(), this).show()
+        }
     }
 
     @SuppressLint("MissingPermission")
     override fun onMapReady(p0: GoogleMap) {
         setOnCameraChangeListener(p0)
         p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
+
         binding.mapView.onResume()
+        p0.defineUserSelectedMapStyle(viewModel.fetchUserMapStyle()!!, requireContext())
+        googleMap = p0
 
         lifecycleScope.launch {
             viewModel.fetchUserLastLocation().apply {
@@ -79,13 +89,11 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
                     val currentLocation = p0.formatToPosition()
 
                     if (currentLocation.isNotEmpty()) {
-                        val address =
-                            viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
+                        val address = viewModel.fetchSingleCodeInfo(currentLocation).data[0].mapToDbModel()
                         viewModel.addGeoCode(address.mapToUiModel())
                         binding.bottom.addLocationButton.disable()
 
-                        ChangeNameDialog.Base(requireContext())
-                            .show(address.mapToUiModel(), this@MapFragment)
+                        ChangeNameDialog.Base(requireContext()).show(address.mapToUiModel(), this@MapFragment)
                         binding.bottom.addLocationButton.enable()
 
                     } else {
@@ -94,7 +102,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
                     }
                 } catch (e: Exception) {
                     Toast.makeText(requireContext(), R.string.something_went_wrong, Toast.LENGTH_SHORT)
-                        .show()
+                    .show()
                 }
             }
         }
@@ -108,26 +116,29 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         googleMap.setOnCameraMoveListener {
             lifecycleScope.launch {
                 viewModel.saveUserLastLocation(
-                    UserLocation(googleMap.cameraPosition.target.latitude,
-                        googleMap.cameraPosition.target.longitude))
-
+                    UserLocation(
+                        googleMap.cameraPosition.target.latitude,
+                        googleMap.cameraPosition.target.longitude)
+                )
                 setBottomSheetData(googleMap.formatToPosition())
             }
         }
     }
 
 
-    private fun setBottomSheetData(query: String) {
+    private suspend fun setBottomSheetData(query: String) {
         val adapter = BottomSheetRecyclerAdapter(this)
         binding.bottom.rv.adapter = adapter
 
         lifecycleScope.launch {
             try {
-                viewModel.fetchGeoCodeInfo(query).apply {
-                    adapter.update(data)
+                withContext(Dispatchers.IO) {
+                    viewModel.fetchGeoCodeInfo(query).apply {
+                        adapter.update(data)
+                    }
                 }
             } catch (e: Exception) {
-                Toast.makeText(requireContext(), R.string.not_connection, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), R.string.error, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -141,5 +152,10 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         lifecycleScope.launch {
             viewModel.addGeoCode(uiModel)
         }
+    }
+
+    override fun onSelectMapStyle(name: String) {
+        viewModel.saveUserMapStyle(name)
+        googleMap.defineUserSelectedMapStyle(name, requireContext())
     }
 }

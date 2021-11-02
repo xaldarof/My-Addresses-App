@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">My Addresses App</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -8,17 +8,18 @@
     <string name="test_location">1.121020102, 10020012</string>
     <string name="test_street">Ulugbek Ko\'chasi</string>
     <string name="add">Add this location</string>
-    <string name="downloading">Загрузка…</string>
-    <string name="not_connection">Произошла ошибка…</string>
-    <string name="something_went_wrong">Something went wrong...</string>
+    <string name="downloading">Downloading…</string>
+    <string name="error">Error</string>
+    <string name="something_went_wrong">Something went wrong…</string>
     <string name="locations">Found locations</string>
     <string name="success_save">Successfully saved to favorites.</string>
-    <string name="is_empty">Город не найден в данном локации !</string>
+    <string name="is_empty">Nothing found in this location</string>
     <string name="save">save</string>
-    <string name="cancel">CANCEL</string>
-    <string name="saved">Сохраненные</string>
-    <string name="success_delete">Успешно удалено.</string>
+    <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
+    <string name="saved">Saved Locations</string>
+    <string name="success_delete">Successfully deleted</string>
     <string name="do_you_want_clear">You really want to clear all ?</string>
-    <string name="delete">Очистить</string>
+    <string name="delete">CLEAR</string>
     <string name="success_copy">Successfully copied to clipboard.</string>
+    <string name="test_map_name">Спутник</string>
 </resources>

@@ -19,9 +19,16 @@ class MainViewModel
                     private val cacheRepository: AddressCacheRepository): ViewModel() {
 
 
-    suspend fun saveUserLastLocation(userLocation: UserLocation) {
+    fun saveUserLastLocation(userLocation: UserLocation) {
         cacheRepository.saveUserLastLocation(userLocation)
     }
+
+    fun saveUserMapStyle(name:String){
+        cacheRepository.saveUserMapStyle(name)
+    }
+
+    fun fetchUserMapStyle():String? = cacheRepository.fetchUserMapStyle()
+
 
     suspend fun fetchUserLastLocation(): UserLocation {
         return cacheRepository.fetchUserLastLocation()

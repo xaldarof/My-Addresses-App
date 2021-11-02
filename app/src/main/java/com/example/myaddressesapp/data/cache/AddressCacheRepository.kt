@@ -19,8 +19,13 @@ interface AddressCacheRepository {
     fun saveUserLastLocation(userLocation: UserLocation)
     suspend fun fetchUserLastLocation(): UserLocation
 
+
+    fun saveUserMapStyle(name:String)
+    fun fetchUserMapStyle():String?
+
     class Base @Inject constructor(private val dao: AddressDao,
-                                   private val userLastLocationDataSource: UserLastLocationDataSource):
+                                   private val userLastLocationDataSource: UserLastLocationDataSource,
+                                   private val userMapStyleDataSource: UserMapStyleDataSource):
         AddressCacheRepository {
 
         override fun fetchAddressesAsFlow(): Flow<List<AddressModelDb>> = dao.fetchAddressesAsFlow()
@@ -41,5 +46,11 @@ interface AddressCacheRepository {
         override suspend fun fetchUserLastLocation(): UserLocation {
             return userLastLocationDataSource.fetchUserLastLocation()
         }
+
+        override fun saveUserMapStyle(name: String) {
+            userMapStyleDataSource.saveUserMapStyle(name)
+        }
+
+        override fun fetchUserMapStyle(): String? = userMapStyleDataSource.fetchUserMapStyle()
     }
 }

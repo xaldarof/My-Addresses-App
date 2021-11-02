@@ -3,10 +3,7 @@ package com.example.myaddressesapp.data.cache.di
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
-import com.example.myaddressesapp.data.cache.AddressCacheRepository
-import com.example.myaddressesapp.data.cache.AppDatabase
-import com.example.myaddressesapp.data.cache.CacheConstants
-import com.example.myaddressesapp.data.cache.UserLastLocationDataSource
+import com.example.myaddressesapp.data.cache.*
 import com.example.myaddressesapp.data.cache.dao.AddressDao
 import dagger.Module
 import dagger.Provides
@@ -34,14 +31,20 @@ object CacheModule {
 
     @Provides
     fun provideCacheRepository(dao: AddressDao,
-        userLastLocationDataSource: UserLastLocationDataSource.Base): AddressCacheRepository {
+        userLastLocationDataSource: UserLastLocationDataSource.Base,userMapStyleDataSource: UserMapStyleDataSource): AddressCacheRepository {
 
-        return AddressCacheRepository.Base(dao, userLastLocationDataSource)
+        return AddressCacheRepository.Base(dao, userLastLocationDataSource,userMapStyleDataSource)
     }
 
     @Provides
     fun provideUserLocationDataSource(sharedPreferences: SharedPreferences): UserLastLocationDataSource {
         return UserLastLocationDataSource.Base(sharedPreferences)
+    }
+
+
+    @Provides
+    fun provideUserMapStyle(sharedPreferences: SharedPreferences):UserMapStyleDataSource{
+        return UserMapStyleDataSource.Base(sharedPreferences)
     }
 
     @Provides

@@ -12,4 +12,11 @@ object UiConstants {
     const val ADDRESS_ARG = "address"
     const val EMPTY = ""
     const val CLIP_BOARD = "copy_text"
+
+
+    const val NORMAL_MAP = "Normal"
+    const val HYBRID_MAP = "Hybrid"
+    const val SATELLITE_MAP = "Satellite"
+    const val DARK_MAP = "Night"
+
 }

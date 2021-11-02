@@ -1,6 +1,7 @@
 package com.example.myaddressesapp.utils
 
 import android.app.Activity
+import android.content.Context
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
@@ -9,7 +10,7 @@ import com.example.myaddressesapp.R
 import com.example.myaddressesapp.ui.UiConstants
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
 fun Activity.setTransparentStatusBar() {
@@ -31,11 +32,30 @@ fun AppCompatButton.enable() {
     this.isEnabled = true
 }
 
-fun GoogleMap.zoomPlus(level:Float){
-    animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition.target, cameraPosition.zoom+level))
+fun GoogleMap.zoomPlus(level: Float) {
+    animateCamera(
+        CameraUpdateFactory.newLatLngZoom(
+            cameraPosition.target,
+            cameraPosition.zoom + level
+        )
+    )
 }
-fun GoogleMap.zoomMinus(level:Float){
-    animateCamera(CameraUpdateFactory.newLatLngZoom(cameraPosition.target, cameraPosition.zoom-level))
+
+fun GoogleMap.zoomMinus(level: Float) {
+    animateCamera(
+        CameraUpdateFactory.newLatLngZoom(
+            cameraPosition.target,
+            cameraPosition.zoom - level
+        )
+    )
+}
+
+fun GoogleMap.defineUserSelectedMapStyle(name: String, context: Context) {
+    if (name == UiConstants.NORMAL_MAP) mapType = GoogleMap.MAP_TYPE_NORMAL
+    else if (name == UiConstants.HYBRID_MAP) mapType = GoogleMap.MAP_TYPE_HYBRID
+    else if (name == UiConstants.SATELLITE_MAP) mapType = GoogleMap.MAP_TYPE_SATELLITE
+    else if (name == UiConstants.DARK_MAP) setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.night_map_style)
+    )
 }
 
 
@@ -46,7 +66,7 @@ fun LinearLayout.collapse() {
     }
 }
 
-fun LinearLayout.expand(){
+fun LinearLayout.expand() {
     BottomSheetBehavior.from(this).apply {
         state = BottomSheetBehavior.STATE_COLLAPSED
         peekHeight = 240
