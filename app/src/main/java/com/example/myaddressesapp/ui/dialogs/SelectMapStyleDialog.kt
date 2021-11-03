@@ -38,9 +38,7 @@ interface SelectMapStyleDialog {
         override fun onSelectLocation(name: String) {
             callBack.onSelectMapStyle(name)
             bottomSheetDialog.dismiss()
-            Toast.makeText(bottomSheetDialog.context, "Selected map style :$name", Toast.LENGTH_SHORT).show()
         }
-
     }
 
     interface CallBack {

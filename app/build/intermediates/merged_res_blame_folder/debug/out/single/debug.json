@@ -120,6 +120,10 @@
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\layout_add_geo_code_location_layout.xml.flat",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\add_geo_code_location_layout.xml"
+    },
+    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\merged_res\\debug\\raw_night_map_style.json.flat",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\raw\\night_map_style.json"
     },

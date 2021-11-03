@@ -5,6 +5,7 @@
     <string name="title_activity_maps">MapsActivity</string>
     <string name="test_tv">ADD THIS LOCATION</string>
     <string name="test_city">New York city</string>
+    <string name="enter_name">Write your location name…</string>
     <string name="test_location">1.121020102, 10020012</string>
     <string name="test_street">Ulugbek Ko\'chasi</string>
     <string name="add">Add this location</string>
@@ -22,4 +23,6 @@
     <string name="delete">CLEAR</string>
     <string name="success_copy">Successfully copied to clipboard.</string>
     <string name="test_map_name">Спутник</string>
+    <string name="time_out">Connection time with server was very long…</string>
+    <string name="boundingbox">Boundingbox</string>
 </resources>

@@ -1510,6 +1510,7 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen location_info_height
 dimen material_bottom_sheet_max_width
 dimen material_clock_display_padding
 dimen material_clock_face_margin_top
@@ -2214,6 +2215,8 @@ id ifRoom
 id ignore
 id ignoreRequest
 id image
+id imageView
+id imageView2
 id immediateStop
 id included
 id info
@@ -2304,6 +2307,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id mtrl_view_tag_bottom_padding
 id multiply
+id myLocationBtn
 id my_nav_host_fragment
 id nav_controller_view_tag
 id nav_graph
@@ -2465,6 +2469,8 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
+id textView2
+id textView3
 id text_input_end_icon
 id text_input_error_icon
 id text_input_start_icon
@@ -2591,6 +2597,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
 layout activity_splash
+layout add_geo_code_location_layout
 layout bottom_sheet
 layout bottom_sheet_item_layout
 layout chuck_activity_main
@@ -2741,6 +2748,7 @@ string app_name
 string appbar_scrolling_view_behavior
 string bottom_sheet_behavior
 string bottomsheet_action_expand_halfway
+string boundingbox
 string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -2795,6 +2803,7 @@ string common_signin_button_text_long
 string delete
 string do_you_want_clear
 string downloading
+string enter_name
 string error
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
@@ -2882,6 +2891,7 @@ string test_location
 string test_map_name
 string test_street
 string test_tv
+string time_out
 string title_activity_maps
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

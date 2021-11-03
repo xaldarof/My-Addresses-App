@@ -1,65 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/bottom_container"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/layout_background">
-
-    <EditText
-        android:id="@+id/newNameEdiText"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/location_info_height"
-        android:layout_margin="24sp"
-        android:background="@drawable/edit_text_background"
-        android:elevation="2dp"
-        android:hint="@string/enter_name"
-        android:inputType="textPersonName"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:text="@string/boundingbox"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newNameEdiText" />
-
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/chip_group"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="24dp"
-        android:orientation="horizontal"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:layout_editor_absoluteX="24dp">
-
-    </com.google.android.material.chip.ChipGroup>
-
-    <EditText
-        android:id="@+id/latitudeEdiText"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/location_info_height"
-        android:layout_margin="24sp"
-        android:background="@drawable/edit_text_background"
-        android:elevation="2dp"
-        android:enabled="false"
-        android:hint="@string/test_city"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chip_group" />
 
     <TextView
         android:id="@+id/textView2"
@@ -71,12 +16,42 @@
         android:background="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottom_container" />
+        app:layout_constraintTop_toTopOf="@+id/container" />
+
+    <EditText
+        android:id="@+id/newNameEdiText"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="24sp"
+        android:background="@drawable/edit_text_background"
+        android:elevation="2dp"
+        android:hint="@string/enter_name"
+        android:inputType="textPersonName"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <EditText
+        android:id="@+id/latitudeEdiText"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_margin="24sp"
+        android:background="@drawable/edit_text_background"
+        android:elevation="2dp"
+        android:enabled="false"
+        android:hint="@string/test_city"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/newNameEdiText" />
 
     <EditText
         android:id="@+id/longitudeEdiText"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/location_info_height"
+        android:layout_height="68dp"
         android:layout_margin="24sp"
         android:background="@drawable/edit_text_background"
         android:elevation="2dp"
@@ -93,28 +68,24 @@
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginStart="16dp"
         android:background="@drawable/button_background"
         android:text="@string/cancel"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/newNameEdiText"
-        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/saveBtn"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:layout_marginEnd="28dp"
         android:background="@drawable/button_background"
         android:backgroundTint="@color/orange"
         android:text="@string/save"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/newNameEdiText"
-        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText"
-        app:layout_constraintVertical_bias="0.289" />
+        app:layout_constraintTop_toBottomOf="@+id/longitudeEdiText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

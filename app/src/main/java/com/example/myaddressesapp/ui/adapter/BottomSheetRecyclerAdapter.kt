@@ -4,19 +4,16 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myaddressesapp.R
-import com.example.myaddressesapp.data.cache.AddressCacheRepository
-import com.example.myaddressesapp.data.cloud.models.response.map.Data
+import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseBody
 import com.example.myaddressesapp.databinding.BottomSheetItemLayoutBinding
 import com.example.myaddressesapp.utils.copyText
-import javax.inject.Inject
 
 class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val oldList = ArrayList<Data>()
+    private val oldList = ArrayList<GeoCoderResponseBody>()
 
     @SuppressLint("NotifyDataSetChanged")
-    fun update(newList: List<Data>){
+    fun update(newList: ArrayList<GeoCoderResponseBody>){
         oldList.clear()
         oldList.addAll(newList)
         notifyDataSetChanged()
@@ -26,16 +23,20 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
     inner class VH(private val bottomSheetItemLayoutBinding: BottomSheetItemLayoutBinding)
         :RecyclerView.ViewHolder(bottomSheetItemLayoutBinding.root){
 
-        fun onBind(data: Data){
+        fun onBind(data: GeoCoderResponseBody){
 
-            bottomSheetItemLayoutBinding.addressName.text = data.name
-            bottomSheetItemLayoutBinding.locationTv.text = data.latitude.toString().plus(",${data.longitude}")
+            bottomSheetItemLayoutBinding.addressName.text = data.display_name
+            bottomSheetItemLayoutBinding.locationTv.text = data.lat.plus(",${data.lon}")
 
             bottomSheetItemLayoutBinding.locationTv.setOnClickListener {
                 bottomSheetItemLayoutBinding.locationTv.copyText()
             }
 
             bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener {
+                callback.onClickAddLocation(data)
+            }
+
+            bottomSheetItemLayoutBinding.container.setOnClickListener {
                 callback.onClickAddLocation(data)
             }
 
@@ -53,6 +54,6 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
     override fun getItemCount(): Int = oldList.size
 
     interface CallBack {
-        fun onClickAddLocation(data: Data)
+        fun onClickAddLocation(geoCoderResponseBody: GeoCoderResponseBody)
     }
 }

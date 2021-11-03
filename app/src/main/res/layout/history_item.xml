@@ -26,24 +26,28 @@
 
     <TextView
         android:id="@+id/addressLocation"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="18dp"
+        android:layout_marginStart="4dp"
+        android:maxLines="1"
+        android:ellipsize="end"
         android:text="@string/test_location"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addressName" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/addressName"
+        app:layout_constraintWidth_percent="0.6" />
 
 
     <ImageView
+        android:id="@+id/imageView2"
         android:layout_width="16dp"
-        android:layout_marginStart="4dp"
         android:layout_height="16dp"
         android:src="@drawable/ic_baseline_content_copy_24"
         app:layout_constraintBottom_toBottomOf="@+id/addressLocation"
-        app:layout_constraintStart_toEndOf="@+id/addressLocation"
-        app:layout_constraintTop_toTopOf="@+id/addressLocation" />
+        app:layout_constraintStart_toStartOf="@+id/addressName"
+        app:layout_constraintTop_toTopOf="@+id/addressLocation"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/testBtn"

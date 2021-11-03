@@ -1,18 +1,12 @@
 package com.example.myaddressesapp.vm
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myaddressesapp.data.cache.AddressCacheRepository
 import com.example.myaddressesapp.data.cache.models.UserLocation
 import com.example.myaddressesapp.data.cloud.GeoCoderRepository
 import com.example.myaddressesapp.data.cloud.models.request.AddressRequestBody
-import com.example.myaddressesapp.data.cloud.models.response.AddressResponseBody
-import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseModel
 import com.example.myaddressesapp.ui.models.AddressUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @HiltViewModel
@@ -21,34 +15,26 @@ class MainViewModel
 @Inject constructor(private val repository: GeoCoderRepository.Base,
                     private val cacheRepository: AddressCacheRepository): ViewModel() {
 
-    fun saveUserLastLocation(userLocation: UserLocation) {
-        cacheRepository.saveUserLastLocation(userLocation)
-    }
+    fun saveUserLastLocation(userLocation: UserLocation) = cacheRepository.saveUserLastLocation(userLocation)
 
-    fun saveUserMapStyle(name:String){
-        cacheRepository.saveUserMapStyle(name)
-    }
+    fun saveUserMapStyle(name:String) = cacheRepository.saveUserMapStyle(name)
+
 
     fun fetchUserMapStyle():String? = cacheRepository.fetchUserMapStyle()
 
 
-    suspend fun fetchUserLastLocation(): UserLocation {
-        return cacheRepository.fetchUserLastLocation()
-    }
+    suspend fun fetchUserLastLocation() = cacheRepository.fetchUserLastLocation()
 
-    suspend fun createAddress(addressRequestBody: AddressRequestBody): AddressResponseBody {
-        return repository.createAddress(addressRequestBody)
-    }
 
-    suspend fun fetchGeoCodeInfo(query: String): GeoCoderResponseModel {
-        return repository.fetchAddressInfo(query)
-    }
+    suspend fun createAddress(addressRequestBody: AddressRequestBody) = repository.createAddress(addressRequestBody)
 
-    suspend fun fetchSingleCodeInfo(query: String): GeoCoderResponseModel {
-        return repository.fetchSingleAddressInfo(query)
-    }
 
-    suspend fun addGeoCode(uiModel: AddressUiModel){
-        repository.addAddress(uiModel.mapToDbModel())
-    }
+    suspend fun fetchGeoCodeInfo(lat:Double,lon:Double) = repository.fetchAddressInfo(lat,lon)
+
+    suspend fun addGeoCode(uiModel: AddressUiModel) = repository.addAddress(uiModel.mapToDbModel())
+
+
+
+    fun fetchUserLastZoom():Float = cacheRepository.fetchUserLastZoom()
+    fun saveUserLastZoom(zoom:Float) = cacheRepository.saveUserLastZoom(zoom)
 }

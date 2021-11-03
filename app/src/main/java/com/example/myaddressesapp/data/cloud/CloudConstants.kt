@@ -12,7 +12,7 @@ object CloudConstants {
     const val MAPS_KEY = "AIzaSyCMTcaExhx41jpJnLJ3BBFkfz2B6Xk8CqA"
 
 
-    const val GEO_CODER_BASE_URL = "http://api.positionstack.com/v1/"
-    const val GEO_CODER_KEY = "1a422791350154f6e08c8869a1f54813"
+    const val GEO_CODER_BASE_URL = "https://nominatim.openstreetmap.org/"
+    const val GEO_CODER_KEY = "1eff89edbcc1a3400cb73d9d5a655724"
 
 }

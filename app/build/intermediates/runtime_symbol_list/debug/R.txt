@@ -1509,6 +1509,7 @@ int dimen hint_pressed_alpha_material_light 0x7f06009a
 int dimen item_touch_helper_max_drag_scroll_per_frame 0x7f06009b
 int dimen item_touch_helper_swipe_escape_max_velocity 0x7f06009c
 int dimen item_touch_helper_swipe_escape_velocity 0x7f06009d
+int dimen location_info_height 0x7f0601ab
 int dimen material_bottom_sheet_max_width 0x7f06009e
 int dimen material_clock_display_padding 0x7f06009f
 int dimen material_clock_face_margin_top 0x7f0600a0
@@ -2213,6 +2214,8 @@ int id ifRoom 0x7f0800ec
 int id ignore 0x7f0800ed
 int id ignoreRequest 0x7f0800ee
 int id image 0x7f0800ef
+int id imageView 0x7f080224
+int id imageView2 0x7f080225
 int id immediateStop 0x7f0800f0
 int id included 0x7f0800f1
 int id info 0x7f0800f2
@@ -2303,6 +2306,7 @@ int id mtrl_picker_text_input_range_start 0x7f080145
 int id mtrl_picker_title_text 0x7f080146
 int id mtrl_view_tag_bottom_padding 0x7f080147
 int id multiply 0x7f080148
+int id myLocationBtn 0x7f080229
 int id my_nav_host_fragment 0x7f080149
 int id nav_controller_view_tag 0x7f08014a
 int id nav_graph 0x7f08014b
@@ -2464,6 +2468,8 @@ int id textSpacerNoTitle 0x7f0801e6
 int id textStart 0x7f0801e7
 int id textTop 0x7f0801e8
 int id textView 0x7f0801e9
+int id textView2 0x7f080226
+int id textView3 0x7f080228
 int id text_input_end_icon 0x7f0801ea
 int id text_input_error_icon 0x7f0801eb
 int id text_input_start_icon 0x7f0801ec
@@ -2590,6 +2596,7 @@ int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
 int layout activity_main 0x7f0b001c
 int layout activity_splash 0x7f0b0089
+int layout add_geo_code_location_layout 0x7f0b008a
 int layout bottom_sheet 0x7f0b001d
 int layout bottom_sheet_item_layout 0x7f0b001e
 int layout chuck_activity_main 0x7f0b001f
@@ -2740,6 +2747,7 @@ int string app_name 0x7f11001d
 int string appbar_scrolling_view_behavior 0x7f11001e
 int string bottom_sheet_behavior 0x7f11001f
 int string bottomsheet_action_expand_halfway 0x7f110020
+int string boundingbox 0x7f1100b1
 int string cancel 0x7f110021
 int string character_counter_content_description 0x7f110022
 int string character_counter_overflowed_content_description 0x7f110023
@@ -2794,6 +2802,7 @@ int string common_signin_button_text_long 0x7f110053
 int string delete 0x7f110054
 int string do_you_want_clear 0x7f110055
 int string downloading 0x7f110056
+int string enter_name 0x7f1100af
 int string error 0x7f110057
 int string error_icon_content_description 0x7f110058
 int string exposed_dropdown_menu_content_description 0x7f110059
@@ -2881,6 +2890,7 @@ int string test_location 0x7f1100aa
 int string test_map_name 0x7f1100ab
 int string test_street 0x7f1100ac
 int string test_tv 0x7f1100ad
+int string time_out 0x7f1100b0
 int string title_activity_maps 0x7f1100ae
 int style AlertDialog_AppCompat 0x7f120000
 int style AlertDialog_AppCompat_Light 0x7f120001

@@ -8,20 +8,20 @@ import com.example.myaddressesapp.ui.models.AddressUiModel
 import com.google.android.material.bottomsheet.BottomSheetDialog
 
 
-interface ChangeNameDialog {
+interface AddLocationDialog {
 
-    fun show(uiModel: AddressUiModel,callBack: CallBack)
+    fun show(lat: String,lon: String,callBack: CallBack)
 
-    class Base(private val context: Context): ChangeNameDialog {
+    class Base(private val context: Context): AddLocationDialog {
 
-        override fun show(uiModel: AddressUiModel,callBack: CallBack) {
+        override fun show(lat: String, lon: String, callBack: CallBack) {
+
             val dialog = BottomSheetDialog(context, R.style.BottomSheetDialogTheme)
             val binding = SaveBottomSheetLayoutBinding.inflate(dialog.layoutInflater)
             dialog.setContentView(binding.root)
 
-            binding.newNameEdiText.setText(uiModel.name)
-            binding.latitudeEdiText.setText(uiModel.latitude.toString())
-            binding.longitudeEdiText.setText(uiModel.longitude.toString())
+            binding.latitudeEdiText.setText(lat)
+            binding.longitudeEdiText.setText(lon)
 
             binding.saveBtn.setOnClickListener {
                 val name = binding.newNameEdiText.text.toString()

@@ -23,6 +23,9 @@ interface AddressCacheRepository {
     fun saveUserMapStyle(name:String)
     fun fetchUserMapStyle():String?
 
+    fun fetchUserLastZoom():Float
+    fun saveUserLastZoom(zoom:Float)
+
     class Base @Inject constructor(private val dao: AddressDao,
                                    private val userLastLocationDataSource: UserLastLocationDataSource,
                                    private val userMapStyleDataSource: UserMapStyleDataSource):
@@ -52,5 +55,9 @@ interface AddressCacheRepository {
         }
 
         override fun fetchUserMapStyle(): String? = userMapStyleDataSource.fetchUserMapStyle()
+
+        override fun fetchUserLastZoom(): Float = userLastLocationDataSource.fetchUserLastZoom()
+
+        override fun saveUserLastZoom(zoom: Float) = userLastLocationDataSource.saveUserLastZoom(zoom)
     }
 }

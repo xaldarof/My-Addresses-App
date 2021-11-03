@@ -9,12 +9,9 @@ object CacheConstants {
     const val LAST_LONGITUDE =  "USER_LAST_LONGITUDE"
     const val PREFERENCES_NAME = "USER_LAST_LOCATION"
 
+
+    const val LAST_ZOOM=  "USER_LAST_ZOOM"
+
     const val SELECTED_MAP_STYLE = "user_selected_map_style"
 
-}
-
-enum class MapStyle(value:String){
-    STANDARD("standart"),
-    SPUTNIK("satellite"),
-    HYBRID("terrain"),
 }

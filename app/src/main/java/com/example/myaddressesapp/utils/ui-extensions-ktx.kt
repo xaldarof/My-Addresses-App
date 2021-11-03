@@ -63,7 +63,7 @@ fun GoogleMap.defineUserSelectedMapStyle(name: String, context: Context) {
 fun LinearLayout.collapse() {
     BottomSheetBehavior.from(this).apply {
         state = BottomSheetBehavior.STATE_COLLAPSED
-        peekHeight = 200
+        peekHeight = 230
     }
 }
 

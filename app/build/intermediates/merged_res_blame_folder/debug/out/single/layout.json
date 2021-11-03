@@ -1,21 +1,5 @@
 [
     {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_history.xml",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\fragment_history.xml"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\activity_splash.xml"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\save_bottom_sheet_layout.xml",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\save_bottom_sheet_layout.xml"
-    },
-    {
-        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bottom_sheet.xml",
-        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\bottom_sheet.xml"
-    },
-    {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\select_map_style_layout.xml",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\select_map_style_layout.xml"
     },
@@ -42,5 +26,25 @@
     {
         "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\history_item.xml",
         "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\history_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\fragment_history.xml",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\fragment_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_splash.xml",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\activity_splash.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\save_bottom_sheet_layout.xml",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\save_bottom_sheet_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\bottom_sheet.xml",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\bottom_sheet.xml"
+    },
+    {
+        "merged": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\add_geo_code_location_layout.xml",
+        "source": "C:\\Users\\Normal_User\\AndroidStudioProjects\\MyAddressesApp\\app\\src\\main\\res\\layout\\add_geo_code_location_layout.xml"
     }
 ]
