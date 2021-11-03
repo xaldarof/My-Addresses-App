@@ -1,5 +1,6 @@
 package com.example.myaddressesapp.vm
 
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.myaddressesapp.data.cache.AddressCacheRepository
 import com.example.myaddressesapp.data.cache.models.UserLocation
@@ -10,6 +11,8 @@ import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderRespons
 import com.example.myaddressesapp.ui.models.AddressUiModel
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collectLatest
 import javax.inject.Inject
 
 @HiltViewModel
@@ -17,7 +20,6 @@ class MainViewModel
 
 @Inject constructor(private val repository: GeoCoderRepository.Base,
                     private val cacheRepository: AddressCacheRepository): ViewModel() {
-
 
     fun saveUserLastLocation(userLocation: UserLocation) {
         cacheRepository.saveUserLastLocation(userLocation)

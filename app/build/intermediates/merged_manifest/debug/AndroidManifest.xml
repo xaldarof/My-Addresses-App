@@ -37,6 +37,9 @@
         android:testOnly="true"
         android:theme="@style/Theme.MyAddressesApp" >
         <activity
+            android:name="com.example.myaddressesapp.ui.activity.SplashActivity"
+            android:exported="true" />
+        <activity
             android:name="com.example.myaddressesapp.ui.activity.MainActivity"
             android:exported="true" >
             <intent-filter>

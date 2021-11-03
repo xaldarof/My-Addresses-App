@@ -56,7 +56,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         }
 
         binding.selectMap.setOnClickListener {
-            SelectMapStyleDialog.Base(requireContext(), this).show()
+            SelectMapStyleDialog.Base(requireContext(), this,viewModel.fetchUserMapStyle()!!).show()
         }
     }
 
@@ -64,7 +64,6 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
     override fun onMapReady(p0: GoogleMap) {
         setOnCameraChangeListener(p0)
         p0.isMyLocationEnabled = requireActivity().isLocationPermissionGranted()
-
         binding.mapView.onResume()
         p0.defineUserSelectedMapStyle(viewModel.fetchUserMapStyle()!!, requireContext())
         googleMap = p0

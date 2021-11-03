@@ -1900,6 +1900,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable earth
 drawable edit_text_background
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
@@ -1915,6 +1916,7 @@ drawable ic_baseline_history_24
 drawable ic_baseline_home_24
 drawable ic_baseline_location_on_24
 drawable ic_baseline_map_24
+drawable ic_baseline_near_me_24
 drawable ic_baseline_remove_24
 drawable ic_baseline_style_24
 drawable ic_baseline_turned_in_24
@@ -2086,6 +2088,7 @@ id cache_measures
 id cancelBtn
 id cancel_action
 id cancel_button
+id cardView
 id carryVelocity
 id center
 id center_horizontal
@@ -2192,6 +2195,7 @@ id group_divider
 id grouping
 id groups
 id guideline
+id guideline2
 id header_title
 id headers
 id hideable
@@ -2215,6 +2219,7 @@ id included
 id info
 id invisible
 id inward
+id isSelectedIcon
 id italic
 id item_touch_helper_previous_elevation
 id jumpToEnd
@@ -2585,6 +2590,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_main
+layout activity_splash
 layout bottom_sheet
 layout bottom_sheet_item_layout
 layout chuck_activity_main

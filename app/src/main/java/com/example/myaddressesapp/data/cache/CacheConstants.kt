@@ -1,6 +1,5 @@
 package com.example.myaddressesapp.data.cache
 
-import androidx.datastore.preferences.core.doublePreferencesKey
 
 object CacheConstants {
 

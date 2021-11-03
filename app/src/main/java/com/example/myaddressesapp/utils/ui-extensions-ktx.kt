@@ -51,11 +51,12 @@ fun GoogleMap.zoomMinus(level: Float) {
 }
 
 fun GoogleMap.defineUserSelectedMapStyle(name: String, context: Context) {
-    if (name == UiConstants.NORMAL_MAP) mapType = GoogleMap.MAP_TYPE_NORMAL
-    else if (name == UiConstants.HYBRID_MAP) mapType = GoogleMap.MAP_TYPE_HYBRID
-    else if (name == UiConstants.SATELLITE_MAP) mapType = GoogleMap.MAP_TYPE_SATELLITE
-    else if (name == UiConstants.DARK_MAP) setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.night_map_style)
-    )
+    when (name) {
+        UiConstants.DARK_MAP -> setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.night_map_style))
+        UiConstants.NORMAL_MAP -> mapType = GoogleMap.MAP_TYPE_TERRAIN
+        UiConstants.HYBRID_MAP -> mapType = GoogleMap.MAP_TYPE_HYBRID
+        UiConstants.SATELLITE_MAP -> mapType = GoogleMap.MAP_TYPE_SATELLITE
+    }
 }
 
 
