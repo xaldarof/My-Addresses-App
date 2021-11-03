@@ -29,9 +29,13 @@ interface AddLocationDialog {
                 val longitude = binding.longitudeEdiText.text.toString()
                 val formattedUiModel = AddressUiModel(name,latitude.toDouble(),longitude.toDouble())
 
-                callBack.onClickSave(formattedUiModel)
-                Toast.makeText(binding.root.context, R.string.success_save, Toast.LENGTH_SHORT).show()
-                dialog.dismiss()
+                if (name.isNotEmpty()) {
+                    callBack.onClickSave(formattedUiModel)
+                    Toast.makeText(binding.root.context, R.string.success_save, Toast.LENGTH_SHORT).show()
+                    dialog.dismiss()
+                }else {
+                    Toast.makeText(binding.root.context, R.string.edittext_is_empty, Toast.LENGTH_SHORT).show()
+                }
             }
             binding.cancelBtn.setOnClickListener {
                 dialog.dismiss()

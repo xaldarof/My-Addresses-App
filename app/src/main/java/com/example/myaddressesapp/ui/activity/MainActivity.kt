@@ -34,24 +34,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
-    private fun requestPermission(){
-        ActivityCompat.requestPermissions(
-            this,
-            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
-            1
-        )
+    private fun requestPermission(){ ActivityCompat.requestPermissions(this,
+            arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 1)
     }
 
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        if (requestCode == 1){
-            if (grantResults.contains(PackageManager.PERMISSION_GRANTED)){
 
-            }else {
-                requestPermission()
-            }
-        }
+
+
+
     }
 }

@@ -2,4 +2,5 @@
 <resources>
     <dimen name="location_info_height">68dp</dimen>
     <dimen name="common_btn_size">60dp</dimen>
+    <dimen name="normal_size">80dp</dimen>
 </resources>

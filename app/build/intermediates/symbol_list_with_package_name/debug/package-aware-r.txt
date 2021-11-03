@@ -1742,6 +1742,7 @@ dimen mtrl_tooltip_minHeight
 dimen mtrl_tooltip_minWidth
 dimen mtrl_tooltip_padding
 dimen mtrl_transition_shared_axis_slide_distance
+dimen normal_size
 dimen notification_action_icon_size
 dimen notification_action_text_size
 dimen notification_big_circle_margin
@@ -1904,6 +1905,7 @@ drawable design_password_eye
 drawable design_snackbar_background
 drawable earth
 drawable edit_text_background
+drawable empty_box
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient
@@ -1914,8 +1916,10 @@ drawable ic_baseline_add_location_alt_24
 drawable ic_baseline_chevron_left_24
 drawable ic_baseline_cleaning_services_24
 drawable ic_baseline_content_copy_24
+drawable ic_baseline_delete_outline_24
 drawable ic_baseline_history_24
 drawable ic_baseline_home_24
+drawable ic_baseline_inbox_24
 drawable ic_baseline_location_on_24
 drawable ic_baseline_map_24
 drawable ic_baseline_near_me_24
@@ -2168,6 +2172,7 @@ id easeOut
 id east
 id edit_query
 id elastic
+id emptyContainer
 id end
 id endToStart
 id end_padder
@@ -2238,6 +2243,7 @@ id light
 id line1
 id line3
 id linear
+id linearLayout
 id list
 id listMode
 id list_item
@@ -2355,6 +2361,7 @@ id protocol
 id radio
 id ratio
 id rectangles
+id relativeLayout
 id request_size
 id request_time
 id response
@@ -2804,6 +2811,7 @@ string common_signin_button_text_long
 string delete
 string do_you_want_clear
 string downloading
+string edittext_is_empty
 string enter_name
 string error
 string error_icon_content_description
@@ -2894,6 +2902,7 @@ string test_street
 string test_tv
 string time_out
 string title_activity_maps
+string you_have_not_any_saved_location_yet
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

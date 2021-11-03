@@ -33,7 +33,9 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
             bottomSheetItemLayoutBinding.locationTv.text = lat.plus(lon)
 
             bottomSheetItemLayoutBinding.locationTv.setOnClickListener {
-                bottomSheetItemLayoutBinding.locationTv.copyText()
+                if (bottomSheetItemLayoutBinding.locationTv.text!=UiConstants.NOT_FOUND) {
+                    bottomSheetItemLayoutBinding.locationTv.copyText()
+                }
             }
 
             bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener {

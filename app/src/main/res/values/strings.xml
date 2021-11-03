@@ -1,6 +1,5 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Addresses</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="test_tv">ADD THIS LOCATION</string>
@@ -15,6 +14,7 @@
     <string name="locations">Found locations</string>
     <string name="success_save">Successfully saved to favorites.</string>
     <string name="is_empty">Nothing found in this location</string>
+    <string name="edittext_is_empty">Location name is not written !</string>
     <string name="save">save</string>
     <string name="cancel" tools:ignore="ButtonCase">CANCEL</string>
     <string name="saved">Saved Locations</string>
@@ -25,4 +25,5 @@
     <string name="test_map_name">Спутник</string>
     <string name="time_out">Connection time with server was very long…</string>
     <string name="boundingbox">Boundingbox</string>
+    <string name="you_have_not_any_saved_location_yet">You have not any saved locations yet</string>
 </resources>
