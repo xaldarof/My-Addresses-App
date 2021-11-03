@@ -55,10 +55,7 @@ class AddGeoCodeLocationDialog(private val callBack: CallBack,
             val longitude = binding.longitudeEdiText.text.toString()
             val formattedUiModel = AddressUiModel(name,latitude.toDouble(),longitude.toDouble())
 
-            callBack.onClickSaveGeoCodeLocation(formattedUiModel)
-
-            Toast.makeText(binding.root.context, com.example.myaddressesapp.R.string.success_save, Toast.LENGTH_SHORT).show()
-            dismiss()
+            saveUserLocation(formattedUiModel)
         }
 
         binding.cancelBtn.setOnClickListener {
@@ -66,6 +63,12 @@ class AddGeoCodeLocationDialog(private val callBack: CallBack,
         }
 
         return dialog
+    }
+
+    private fun saveUserLocation(formattedUiModel: AddressUiModel) {
+        callBack.onClickSaveGeoCodeLocation(formattedUiModel)
+        Toast.makeText(binding.root.context, com.example.myaddressesapp.R.string.success_save, Toast.LENGTH_SHORT).show()
+        dismiss()
     }
 
     interface CallBack {

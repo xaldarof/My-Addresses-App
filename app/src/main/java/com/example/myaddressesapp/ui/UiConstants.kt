@@ -6,7 +6,7 @@ object UiConstants {
     const val ADD_TO_HISTORY = "Добавить"
 
 
-    const val ZOOM_STREET = 15f
+    const val ZOOM_STREET = 18f
     const val ZOOM_CITY = 20f
 
     const val ADDRESS_ARG = "address"

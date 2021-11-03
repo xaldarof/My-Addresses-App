@@ -65,10 +65,9 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         binding.mapView.onResume()
         p0.defineUserSelectedMapStyle(viewModel.fetchUserMapStyle()!!, requireContext())
 
-
         lifecycleScope.launch {
             viewModel.fetchUserLastLocation().apply {
-                navigateCamera(p0, LatLng(lat, lon))
+                navigateCamera(p0, LatLng(lat, lon),zoom = viewModel.fetchUserLastZoom())
             }
         }
 
@@ -78,7 +77,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
 
         binding.bottom.addLocationButton.setOnClickListener { showAddLocationDialog(p0) }
 
-        binding.myLocationBtn.setOnClickListener { navigateToUserLocation(p0) }
+        binding.myLocationBtn.setOnClickListener { navigateToUserCurrentLocation(p0) }
     }
 
     private fun showAddLocationDialog(p0: GoogleMap) {
@@ -90,7 +89,7 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
     }
 
     @SuppressLint("MissingPermission", "VisibleForTests")
-    private fun navigateToUserLocation(p0: GoogleMap){
+    private fun navigateToUserCurrentLocation(p0: GoogleMap){
         if (requireActivity().isLocationPermissionGranted()) {
             FusedLocationProviderClient(requireActivity()).lastLocation.addOnSuccessListener {
                 navigateCamera(p0,LatLng(it.latitude,it.longitude))
@@ -98,9 +97,8 @@ class MapFragment : Fragment(), OnMapReadyCallback, BottomSheetRecyclerAdapter.C
         } else requireActivity().requestLocationPermission()
     }
 
-
-    private fun navigateCamera(googleMap: GoogleMap, latLng: LatLng) {
-        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, viewModel.fetchUserLastZoom()))
+    private fun navigateCamera(googleMap: GoogleMap, latLng: LatLng,zoom:Float = UiConstants.ZOOM_STREET) {
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,zoom))
     }
 
     private fun setOnCameraChangeListener(googleMap: GoogleMap) {
