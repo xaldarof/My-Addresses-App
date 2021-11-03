@@ -19,6 +19,11 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
         notifyDataSetChanged()
     }
 
+    @SuppressLint("NotifyDataSetChanged")
+    fun notifyChanged(){
+        notifyDataSetChanged()
+    }
+
     inner class VH(private val historyItemBinding: HistoryItemBinding):RecyclerView.ViewHolder(historyItemBinding.root){
 
         @SuppressLint("SetTextI18n")
@@ -40,7 +45,8 @@ class AddressRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapte
         return VH(HistoryItemBinding.inflate(LayoutInflater.from(parent.context),parent,false))
     }
 
-    fun getItemByPosition(position: Int) = oldList[position].name
+    fun getItemNameByPosition(position: Int) = oldList[position].name
+    fun getItemByPosition(position: Int) = oldList[position]
 
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder,position: Int) {

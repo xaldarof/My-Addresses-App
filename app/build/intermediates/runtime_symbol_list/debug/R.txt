@@ -1923,6 +1923,7 @@ int drawable ic_baseline_location_on_24 0x7f07008d
 int drawable ic_baseline_map_24 0x7f07008e
 int drawable ic_baseline_near_me_24 0x7f0700c7
 int drawable ic_baseline_remove_24 0x7f07008f
+int drawable ic_baseline_share_24 0x7f0700cb
 int drawable ic_baseline_style_24 0x7f070090
 int drawable ic_baseline_turned_in_24 0x7f070091
 int drawable ic_clock_black_24dp 0x7f070092
@@ -2172,6 +2173,7 @@ int id east 0x7f0800be
 int id edit_query 0x7f0800bf
 int id elastic 0x7f0800c0
 int id emptyContainer 0x7f08022b
+int id emptyIcon 0x7f08022d
 int id end 0x7f0800c1
 int id endToStart 0x7f0800c2
 int id end_padder 0x7f0800c3
@@ -2880,6 +2882,7 @@ int string mtrl_picker_toggle_to_text_input_mode 0x7f110097
 int string mtrl_picker_toggle_to_year_selection 0x7f110098
 int string nav_app_bar_navigate_up_description 0x7f110099
 int string nav_app_bar_open_drawer_description 0x7f11009a
+int string nothing_delete 0x7f1100b4
 int string notification_category 0x7f11009b
 int string password_toggle_content_description 0x7f11009c
 int string path_password_eye 0x7f11009d

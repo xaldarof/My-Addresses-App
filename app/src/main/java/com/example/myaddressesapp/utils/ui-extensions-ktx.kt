@@ -73,3 +73,9 @@ fun LinearLayout.expand() {
         peekHeight = 240
     }
 }
+
+fun View.animateShake(){
+    val anim = AnimationUtils.loadAnimation(context,R.anim.shake_animation)
+    animation = anim
+    startAnimation(anim)
+}

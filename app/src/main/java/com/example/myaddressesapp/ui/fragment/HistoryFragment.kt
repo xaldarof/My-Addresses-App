@@ -23,9 +23,10 @@ import com.example.myaddressesapp.vm.HistoryViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
-import me.everything.android.ui.overscroll.OverScrollDecoratorHelper
 import android.graphics.Color
 import androidx.core.view.isVisible
+import com.example.myaddressesapp.utils.animateShake
+import com.example.myaddressesapp.utils.shareText
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 @AndroidEntryPoint
@@ -47,7 +48,12 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack,ClearAllDia
         binding.backBtn.setOnClickListener { findNavController().popBackStack() }
 
         binding.clearAlLBtn.setOnClickListener {
-            ClearAllDialog.Base(requireContext()).show(this)
+            if (adapter.itemCount > 0) {
+                ClearAllDialog.Base(requireContext()).show(this)
+            }else {
+                binding.emptyIcon.animateShake()
+                Toast.makeText(requireContext(), R.string.nothing_delete, Toast.LENGTH_SHORT).show()
+            }
         }
 
         lifecycleScope.launch {
@@ -57,16 +63,26 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack,ClearAllDia
             }
         }
 
-        val itemTouchCallBack = object : ItemTouchHelper.SimpleCallback(0,ItemTouchHelper.RIGHT){
+        val itemTouchCallBack = object : ItemTouchHelper.SimpleCallback(0,
+            ItemTouchHelper.RIGHT or ItemTouchHelper.LEFT){
+
             override fun onMove(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
                                 target: RecyclerView.ViewHolder): Boolean { return true }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
                 val position = viewHolder.absoluteAdapterPosition
-                val name = adapter.getItemByPosition(position)
-                viewModel.deleteAddress(name)
-                adapter.notifyItemRemoved(position)
-                Toast.makeText(requireContext(),R.string.success_delete, Toast.LENGTH_SHORT).show()
+
+                if (direction == ItemTouchHelper.RIGHT) {
+                    val name = adapter.getItemNameByPosition(position)
+                    viewModel.deleteAddress(name)
+                    adapter.notifyItemRemoved(position)
+                    Toast.makeText(requireContext(), R.string.success_delete, Toast.LENGTH_SHORT).show()
+                }
+                else {
+                    val item = adapter.getItemByPosition(position)
+                    requireContext().shareText("${item.name}\n${item.latitude}\n${item.longitude}")
+                    adapter.notifyChanged()
+                }
             }
 
             override fun onChildDraw(c: Canvas, recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder,
@@ -77,6 +93,9 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack,ClearAllDia
                     .addSwipeRightBackgroundColor(Color.RED)
                     .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_outline_24)
                     .setSwipeRightActionIconTint(Color.WHITE)
+                    .addSwipeLeftBackgroundColor(Color.GREEN)
+                    .addSwipeLeftActionIcon(R.drawable.ic_baseline_share_24)
+                    .setSwipeLeftActionIconTint(Color.WHITE)
                     .create()
                     .decorate()
 

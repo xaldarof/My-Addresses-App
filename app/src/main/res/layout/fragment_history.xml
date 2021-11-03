@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
+    android:focusable="true"
     android:orientation="vertical"
     tools:context=".ui.fragment.HistoryFragment">
 
@@ -73,6 +75,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
+            android:id="@+id/emptyIcon"
             android:layout_width="@dimen/normal_size"
             android:layout_height="@dimen/normal_size"
             android:layout_gravity="center"

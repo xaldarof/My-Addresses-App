@@ -10,6 +10,14 @@ import android.widget.Toast
 import com.example.myaddressesapp.R
 import com.example.myaddressesapp.ui.UiConstants
 import android.os.Vibrator
+import android.view.View
+import android.content.Intent
+import androidx.core.content.ContextCompat
+
+import androidx.core.content.ContextCompat.startActivity
+
+
+
 
 fun GoogleMap.formatToPosition(): String {
     return "${this.cameraPosition.target.latitude},${this.cameraPosition.target.longitude}"
@@ -28,4 +36,11 @@ fun TextView.copyText() {
 fun Context.vibrate(){
     val v = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator?
     v!!.vibrate(20)
+}
+
+fun Context.shareText(text:String){
+    val intent = Intent(Intent.ACTION_SEND)
+    intent.type = "text/plain"
+    intent.putExtra(Intent.EXTRA_TEXT,text.toString())
+    startActivity(Intent.createChooser(intent, "Share location"))
 }
