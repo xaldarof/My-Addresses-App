@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myaddressesapp.data.cloud.models.response.map.GeoCoderResponseBody
 import com.example.myaddressesapp.databinding.BottomSheetItemLayoutBinding
+import com.example.myaddressesapp.ui.UiConstants
 import com.example.myaddressesapp.utils.copyText
 
 class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -24,22 +25,24 @@ class BottomSheetRecyclerAdapter(private val callback:CallBack): RecyclerView.Ad
         :RecyclerView.ViewHolder(bottomSheetItemLayoutBinding.root){
 
         fun onBind(data: GeoCoderResponseBody){
+            bottomSheetItemLayoutBinding.addressName.text = data.display_name?:UiConstants.UNKNOWN
 
-            bottomSheetItemLayoutBinding.addressName.text = data.display_name
-            bottomSheetItemLayoutBinding.locationTv.text = data.lat.plus(",${data.lon}")
+            val lat = data.lat?: UiConstants.NOT_FOUND
+            val lon = data.lon?: UiConstants.EMPTY
+
+            bottomSheetItemLayoutBinding.locationTv.text = lat.plus(lon)
 
             bottomSheetItemLayoutBinding.locationTv.setOnClickListener {
                 bottomSheetItemLayoutBinding.locationTv.copyText()
             }
 
             bottomSheetItemLayoutBinding.addLocationBtn.setOnClickListener {
-                callback.onClickAddLocation(data)
+                if (lat!=UiConstants.NOT_FOUND)  callback.onClickAddLocation(data)
             }
 
             bottomSheetItemLayoutBinding.container.setOnClickListener {
-                callback.onClickAddLocation(data)
+                if (lat!=UiConstants.NOT_FOUND)  callback.onClickAddLocation(data)
             }
-
         }
     }
 

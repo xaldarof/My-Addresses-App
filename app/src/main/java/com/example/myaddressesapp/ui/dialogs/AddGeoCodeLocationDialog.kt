@@ -42,10 +42,12 @@ class AddGeoCodeLocationDialog(private val callBack: CallBack,
         binding.longitudeEdiText.setText(geoCoderResponseBody.lon)
         binding.newNameEdiText.setText(geoCoderResponseBody.display_name)
 
-        geoCoderResponseBody.boundingbox.forEach {
-            val chip = Chip(context)
-            chip.text = it
-            binding.chipGroup.addView(chip)
+        if (!geoCoderResponseBody.boundingbox.isNullOrEmpty()) {
+            geoCoderResponseBody.boundingbox.forEach {
+                val chip = Chip(context)
+                chip.text = it
+                binding.chipGroup.addView(chip)
+            }
         }
 
         binding.saveBtn.setOnClickListener {

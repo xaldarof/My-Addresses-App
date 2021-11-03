@@ -2,8 +2,12 @@ package com.example.myaddressesapp.ui
 
 object UiConstants {
 
-    const val DOWNLOADING = "Загрузка..."
-    const val ADD_TO_HISTORY = "Добавить"
+    const val DOWNLOADING = "Downloading..."
+    const val ADD_TO_HISTORY = "Add"
+
+
+    const val NOT_FOUND = "Not found"
+    const val UNKNOWN = "Unknown"
 
 
     const val ZOOM_STREET = 18f

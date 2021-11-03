@@ -15,8 +15,8 @@
 
     <ImageView
         android:id="@+id/myLocationBtn"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/common_btn_size"
+        android:layout_height="@dimen/common_btn_size"
         android:layout_marginTop="12dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/back_view_background"
@@ -61,6 +61,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -72,8 +73,8 @@
 
         <ImageView
             android:id="@+id/zoomPlus"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/common_btn_size"
+            android:layout_height="@dimen/common_btn_size"
             android:background="@drawable/back_view_background"
             android:padding="12dp"
             android:src="@drawable/ic_baseline_add_24"
@@ -81,8 +82,8 @@
 
         <ImageView
             android:id="@+id/zoomMinus"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/common_btn_size"
+            android:layout_height="@dimen/common_btn_size"
             android:layout_marginTop="8dp"
             android:background="@drawable/back_view_background"
             android:padding="12dp"
@@ -91,8 +92,8 @@
 
         <ImageView
             android:id="@+id/selectMap"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/common_btn_size"
+            android:layout_height="@dimen/common_btn_size"
             android:layout_marginTop="8dp"
             android:background="@drawable/back_view_background"
             android:padding="12dp"
