@@ -27,6 +27,7 @@ import android.graphics.Color
 import androidx.core.view.isVisible
 import com.example.myaddressesapp.utils.animateShake
 import com.example.myaddressesapp.utils.shareText
+import com.example.myaddressesapp.utils.vibrate
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 
 @AndroidEntryPoint
@@ -53,6 +54,7 @@ class HistoryFragment : Fragment() , AddressRecyclerAdapter.CallBack,ClearAllDia
             }else {
                 binding.emptyIcon.animateShake()
                 Toast.makeText(requireContext(), R.string.nothing_delete, Toast.LENGTH_SHORT).show()
+                requireContext().vibrate()
             }
         }
 
